@@ -5,6 +5,7 @@ import org.hibernate.Session;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.ArrayList;
 
 
 public class TreeDao {
@@ -30,20 +31,8 @@ public class TreeDao {
         return getAllTrees(0, 0);
     }
     public List<Tree> getAllTrees(int firstResult, int maxResult) {
-        List<Tree> trees = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("select id, title from Tree");
-        query.setFirstResult(firstResult);
-        query.setMaxResults(maxResult);
-        @SuppressWarnings("unchecked")
-        List allUsers = query.list();
-        for (Iterator it = allUsers.iterator(); it.hasNext(); ) {
-            Object[] treeObject = (Object[]) it.next();
-            Tree tree = new Tree((Integer) treeObject[0]);
-            tree.setTitle((String) treeObject[1]);
-            trees.add(tree);
-        }
-        session.close();
+        List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree").addEntity(Tree.class).list();
         return trees;
     }
 
@@ -56,6 +45,7 @@ public class TreeDao {
 
     public void saveOrUpdateTree(Tree tree) {
         Session session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("hlla : "+ tree.id);
         session.saveOrUpdate(tree);
         session.flush();
         session.close();

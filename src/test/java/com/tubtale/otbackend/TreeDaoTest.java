@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.*;
@@ -22,7 +23,8 @@ public class TreeDaoTest extends CommonTest {
     }
 
     @Test
-    public void getAllTreesShouldReturnAllTrees() {
+    public void getOneTreesShouldReturnAllTrees() {
+
         assertThat(treeDao.getAllTrees().size(), is(equalTo(1)));
     }
 
@@ -30,12 +32,6 @@ public class TreeDaoTest extends CommonTest {
     public void deleteAllTreesShouldDeleteAllTrees() {
         treeDao.deleteAllTrees();
         assertThat(treeDao.getAllTrees().size(), is(equalTo(0)));
-    }
-
-    @Test
-    public void getAllTreesShouldReturnsTreesWithId() {
-        Tree actual = treeDao.getAllTrees().get(0);
-        assertThat(actual.getId(), is(equalTo(id)));
     }
 
     @Test
@@ -54,8 +50,11 @@ public class TreeDaoTest extends CommonTest {
 
     @Test
     public void getTreeShouldReturnTreeWithTheSpecifiedId() {
-        Tree actual = treeDao.getTree(id);
-        assertThat(actual, is(equalTo(actual)));
+        int size = 12;
+        List<Tree> list= insertTrees(size);
+        Tree actual = treeDao.getTree(list.get(5).getId());
+        assertThat(actual.getId(), is(equalTo(list.get(5).getId())));
+        assertThat(actual.getText(), is(equalTo(tree.getText())));
     }
 
     @Test
@@ -66,17 +65,20 @@ public class TreeDaoTest extends CommonTest {
 
     @Test
     public void saveOrUpdateTreeShouldSaveTheNewTree() {
-        int actualId = 123;
-        tree.setId(actualId);
-        tree.setText("saving tree");
-        treeDao.saveOrUpdateTree(tree);
+        Tree newTree = new Tree();
+        newTree.setText("B");
+        newTree.setIp("A");
+        newTree.setTimestamp(new java.sql.Timestamp(0));
+        newTree.setMetersToHide(20);
+        treeDao.saveOrUpdateTree(newTree);
+
         assertThat(treeDao.getAllTrees().size(), is(equalTo(2)));
-        assertThat(treeDao.getTree(actualId), is(equalTo(tree)));
+        assertThat(treeDao.getTree(newTree.getId()), is(equalTo(newTree)));
     }
 
     @Test
     public void deleteTreeShouldReturnDeletedTree() {
-        Tree actual = treeDao.deleteTree(id);
+        Tree actual = treeDao.deleteTree(tree.getId());
         assertThat(actual, is(equalTo(tree)));
     }
 
@@ -88,8 +90,7 @@ public class TreeDaoTest extends CommonTest {
 
     @Test
     public void deleteTreeShouldDeleteSpecifiedTree() {
-        treeDao.deleteTree(id);
+        treeDao.deleteTree(tree.getId());
         assertThat(treeDao.getAllTrees().size(), is(equalTo(0)));
     }
-
 }

@@ -13,16 +13,16 @@ public class CommonTest {
 
     @Before
     public void beforeCommonTest() {
-        tree = new Tree(id);
+        tree = new Tree();
         tree.setText(text);
     }
 
-    protected List<Tree> insertBooks(int count) {
+    protected List<Tree> insertTrees(int count) {
         List<Tree> trees = new ArrayList<Tree>();
         for (int index = 1; index <= count; index++) {
-            Tree tree = new Tree(index);
+            Tree tree = new Tree();
             tree.setText(text);
-            treeokDao.saveOrUpdateBook(tree);
+            treeDao.saveOrUpdateTree(tree);
             trees.add(tree);
         }
         return trees;

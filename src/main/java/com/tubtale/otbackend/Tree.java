@@ -1,10 +1,5 @@
 package com.tubtale.otbackend;
 
-/**
- * Created by quest on 12/06/15.
- */
-
-
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -19,22 +14,27 @@ public class Tree {
     @Column(name = "id")
     int id;
 
-
     @Column(name = "text")
     private String text;
 
+    @Column(name = "ip")
+    private String ip;
+
+    @Column(name = "metersToHide")
+    private int metersToHide;
+
+    @Column(name = "timestamp")
+    private java.sql.Timestamp timestamp;
+
     public Tree() { }
-    public Tree(int id) {
-        setId(id);
-    }
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-
 
     public String getText() {
         return text;
@@ -43,7 +43,18 @@ public class Tree {
         this.text = text;
     }
 
+    public String getIp() {
+        return ip;
+    }
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
 
+    public int getMetersToHide(){ return this.metersToHide; }
+    public void setMetersToHide(int metersToHide) { this.metersToHide = metersToHide; }
+
+    public java.sql.Timestamp getTimestamp(){ return this.timestamp; }
+    public void setTimestamp(java.sql.Timestamp timestamp){ this.timestamp = timestamp; }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +64,9 @@ public class Tree {
 
         if (id != tree.getId()) return false;
         if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
+        if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
+        if (metersToHide != tree.getMetersToHide()) return false;
+        if (timestamp != null ? !timestamp.equals(tree.timestamp) : tree.timestamp != null) return false;
 
         return true;
     }
