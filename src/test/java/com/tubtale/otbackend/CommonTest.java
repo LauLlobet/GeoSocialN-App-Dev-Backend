@@ -22,7 +22,7 @@ public class CommonTest {
         for (int index = 1; index <= count; index++) {
             Tree tree = new Tree();
             tree.setText(text);
-            treeDao.saveOrUpdateTree(tree);
+            treeDao.save(tree);
             trees.add(tree);
         }
         return trees;

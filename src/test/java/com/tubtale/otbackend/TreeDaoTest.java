@@ -14,7 +14,7 @@ public class TreeDaoTest extends CommonTest {
 
     @Before
     public void beforeTreeDaoTest() {
-        treeDao.saveOrUpdateTree(tree);
+        treeDao.save(tree);
     }
 
     @After
@@ -64,16 +64,32 @@ public class TreeDaoTest extends CommonTest {
     }
 
     @Test
-    public void saveOrUpdateTreeShouldSaveTheNewTree() {
+    public void saveTreeShouldSaveTheNewTree() {
         Tree newTree = new Tree();
         newTree.setText("B");
         newTree.setIp("A");
         newTree.setTimestamp(new java.sql.Timestamp(0));
         newTree.setMetersToHide(20);
-        treeDao.saveOrUpdateTree(newTree);
+        treeDao.save(newTree);
+        /*List<Tree> list = treeDao.getAllTrees();
+        for(Tree t: list){
+            System.out.println(t.getId());
+        }*/
+        System.out.println("requestedAnswewrdId: "+ treeDao.getTree(newTree.getId()).getId());
+        assertThat(0, is(1));
+       // assertThat(treeDao.getAllTrees().size(), is(equalTo(2)));
+       // assertThat(treeDao.getTree(newTree.getId()), is(equalTo(newTree)));
+    }
 
-        assertThat(treeDao.getAllTrees().size(), is(equalTo(2)));
-        assertThat(treeDao.getTree(newTree.getId()), is(equalTo(newTree)));
+    @Test
+    public void shouldBeImpossibleToUpdate() {
+        Tree newTree = new Tree();
+        newTree.setText("bbb");
+        treeDao.save(newTree);
+        newTree.setText("aaa");
+        treeDao.save(newTree);
+        String dbtext = treeDao.getTree(newTree.getId()).getText();
+        assertThat(dbtext, is(not(equalTo("aaa"))));
     }
 
     @Test

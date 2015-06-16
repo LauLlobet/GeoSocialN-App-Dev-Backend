@@ -61,9 +61,13 @@ public class TreeApiTest  extends CommonTest {
     public void getV1ItemsShouldReturnListOfTrees() throws Exception {
         int size = 3;
         insertTrees(size);
+        itemsTarget = itemsTarget.queryParam("x", 3);
+        itemsTarget = itemsTarget.queryParam("y",7);
         String json = itemsTarget.request().get(String.class);
+        System.out.println(json);
         List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
         assertThat(actual.size(), is(size));
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(json), is(10));
     }
 
     @Test
@@ -75,26 +79,33 @@ public class TreeApiTest  extends CommonTest {
     @Test
     public void getV1ItemsIdShouldReturnSpecifiedTree() throws Exception {
         Tree expected = insertTrees(1).get(0);
+        itemsTarget = itemsTarget.queryParam("x", 2);
+        itemsTarget = itemsTarget.queryParam("y",2);
         String json = itemsTarget.path("/" + expected.getId()).request().get(String.class);
-        Tree actual = objectMapper.readValue(json, Tree.class);
+        Tree actual = extractTreeContentOfAGetOrPut(json);
         assertThat(actual, is(equalTo(expected)));
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(json),is(4));
     }
 
     @Test
     public void putV1ItemsIdShouldSaveNewTree() throws Exception {
         String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
         Response r = itemsTarget.request().put(Entity.text(json));
-        Tree putAnsTree = extractTreeContentOfAGetOrPut(r.readEntity(String.class));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
         tree.setId(putAnsTree.getId());
         Tree actual = treeDao.getTree(putAnsTree.getId());
         assertThat(actual, is(not(nullValue())));
         assertThat(actual, is(equalTo(tree)));
         assertThat(treeDao.getAllTrees().size(), is(1));
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonans),is(4));
     }
 
     @Test
     public void putV1ItemsShouldUpdateExistingTree() throws Exception {
-        treeDao.saveOrUpdateTree(tree);
+        treeDao.save(tree);
         tree.setText("This is new title");
         String json = new ObjectMapper().writeValueAsString(tree);
         Response r = itemsTarget.request().put(Entity.text(json));
@@ -107,7 +118,7 @@ public class TreeApiTest  extends CommonTest {
     @Test
     public void deleteV1ItemsIdShouldDeleteExistingTree() throws Exception {
         List<Tree> trees = insertTrees(3);
-        treeDao.saveOrUpdateTree(trees.get(0));
+        treeDao.save(trees.get(0));
         itemsTarget.path("/" + trees.get(0).getId()).request().delete();
         assertThat(treeDao.getAllTrees().size(), is(trees.size() - 1));
     }
@@ -125,5 +136,12 @@ public class TreeApiTest  extends CommonTest {
         JsonNode rootNode = mapper.readTree(new StringReader(restAns));
         JsonNode contentNode = rootNode.get("treeContent");
         return new ObjectMapper().readValue(contentNode,  objectMapper.getTypeFactory().constructCollectionType(List.class, Tree.class));
+    }
+
+    public Integer extractEmptyTreesCountContentOfAGetOrPut(String restAns) throws  Exception{
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
+        JsonNode contentNode = rootNode.get("emptyTrees");
+        return new ObjectMapper().readValue(contentNode,Integer.class);
     }
 }

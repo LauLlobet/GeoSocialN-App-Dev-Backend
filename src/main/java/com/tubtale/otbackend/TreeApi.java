@@ -18,16 +18,16 @@ public class TreeApi {
 
     @GET
     @JSONP(queryParam = "callback")
-    public String getAllTrees(@QueryParam("offset") int offset,
-                              @QueryParam("count") int count,
-                              @QueryParam("callback") String callback) throws Exception {
+    public String getAllTrees(@QueryParam("x") int x,
+                              @QueryParam("y") int y) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
+        System.out.println("number:"+x);
         mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
-        List<Tree> trees = TreeDao.getInstance().getAllTrees(offset, count);
+        List<Tree> trees = TreeDao.getInstance().getAllTrees();
         for (Tree tree : trees) {
             tree.setIp(ITEMS_URL + "/" + tree.getId());
         }
-        return "{ \"treeContent\":" + mapper.writeValueAsString(trees) +", \"emptyTrees\":0 }" ;
+        return "{ \"treeContent\":" + mapper.writeValueAsString(trees) +", \"emptyTrees\":"+(x+y)+" }" ;
     }
 
     @DELETE
@@ -39,17 +39,21 @@ public class TreeApi {
     @GET
     @Path("/{id}")
     @JSONP(queryParam = "callback")
-    public String getTree(@PathParam("id") int id) throws Exception {
+    public String getTree(@PathParam("id") int id,
+                          @QueryParam("x") int x,
+                          @QueryParam("y") int y) throws Exception {
         Tree tree = TreeDao.getInstance().getTree(id);
-        return new ObjectMapper().writeValueAsString(tree);
+        return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+(x+y)+"}" ;
     }
 
     @PUT
     @JSONP(queryParam = "callback")
-    public String putTree(String treeJson) throws Exception {
+    public String putTree(String treeJson,
+                          @QueryParam("x") int x,
+                          @QueryParam("y") int y) throws Exception {
         Tree tree = new ObjectMapper().readValue(treeJson, Tree.class);
-        TreeDao.getInstance().saveOrUpdateTree(tree);
-        return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":0}" ;
+        TreeDao.getInstance().save(tree);
+        return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+(x+y)+"}" ;
     }
 
     @DELETE

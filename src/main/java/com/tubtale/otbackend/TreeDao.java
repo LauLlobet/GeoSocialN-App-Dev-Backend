@@ -43,10 +43,11 @@ public class TreeDao {
         return tree;
     }
 
-    public void saveOrUpdateTree(Tree tree) {
+    public void save(Tree tree) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        System.out.println("hlla : "+ tree.id);
+        System.out.println("pre:"+tree.getId());
         session.saveOrUpdate(tree);
+        System.out.println("post:" + tree.getId());
         session.flush();
         session.close();
     }

@@ -14,16 +14,16 @@ public class Tree {
     @Column(name = "id")
     int id;
 
-    @Column(name = "text")
+    @Column(name = "text", nullable = true)
     private String text;
 
-    @Column(name = "ip")
+    @Column(name = "ip", nullable = true)
     private String ip;
 
-    @Column(name = "metersToHide")
+    @Column(name = "metersToHide", nullable = true)
     private int metersToHide;
 
-    @Column(name = "timestamp")
+    @Column(name = "timestamp", nullable = true)
     private java.sql.Timestamp timestamp;
 
     public Tree() { }
