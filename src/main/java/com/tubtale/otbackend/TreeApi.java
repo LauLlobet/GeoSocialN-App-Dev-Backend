@@ -27,7 +27,7 @@ public class TreeApi {
         for (Tree tree : trees) {
             tree.setIp(ITEMS_URL + "/" + tree.getId());
         }
-        return "[" + mapper.writeValueAsString(trees) +", emptyTrees:0]" ;
+        return "{ \"treeContent\":" + mapper.writeValueAsString(trees) +", \"emptyTrees\":0 }" ;
     }
 
     @DELETE
@@ -49,7 +49,7 @@ public class TreeApi {
     public String putTree(String treeJson) throws Exception {
         Tree tree = new ObjectMapper().readValue(treeJson, Tree.class);
         TreeDao.getInstance().saveOrUpdateTree(tree);
-        return "[" + new ObjectMapper().writeValueAsString(tree) +",emptyTrees:0]" ;
+        return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":0}" ;
     }
 
     @DELETE
