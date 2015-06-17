@@ -45,9 +45,9 @@ public class TreeDao {
 
     public void save(Tree tree) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        System.out.println("pre:"+tree.getId());
+        if(tree.getId() != null)
+            return;
         session.saveOrUpdate(tree);
-        System.out.println("post:" + tree.getId());
         session.flush();
         session.close();
     }

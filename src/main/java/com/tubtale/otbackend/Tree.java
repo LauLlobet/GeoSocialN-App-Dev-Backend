@@ -12,7 +12,7 @@ public class Tree {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "id")
-    int id;
+    Integer id;
 
     @Column(name = "text", nullable = true)
     private String text;
@@ -26,13 +26,15 @@ public class Tree {
     @Column(name = "timestamp", nullable = true)
     private java.sql.Timestamp timestamp;
 
-    public Tree() { }
+    public Tree() {
+        id = null;
+    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -62,7 +64,7 @@ public class Tree {
 
         Tree tree = (Tree) o;
 
-        if (id != tree.getId()) return false;
+        if (!id.equals(tree.getId())) return false;
         if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
         if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
         if (metersToHide != tree.getMetersToHide()) return false;

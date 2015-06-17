@@ -1,5 +1,6 @@
 package com.tubtale.otbackend;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,21 +65,21 @@ public class TreeDaoTest extends CommonTest {
     }
 
     @Test
-    public void saveTreeShouldSaveTheNewTree() {
+    public void saveTreeShouldSaveTheNewTree() throws Exception{
         Tree newTree = new Tree();
         newTree.setText("B");
         newTree.setIp("A");
         newTree.setTimestamp(new java.sql.Timestamp(0));
         newTree.setMetersToHide(20);
         treeDao.save(newTree);
-        /*List<Tree> list = treeDao.getAllTrees();
-        for(Tree t: list){
-            System.out.println(t.getId());
-        }*/
-        System.out.println("requestedAnswewrdId: "+ treeDao.getTree(newTree.getId()).getId());
-        assertThat(0, is(1));
+        Tree fetched = treeDao.getTree(newTree.getId());
        // assertThat(treeDao.getAllTrees().size(), is(equalTo(2)));
-       // assertThat(treeDao.getTree(newTree.getId()), is(equalTo(newTree)));
+        //assertThat(fetched, is(equalTo(newTree)));
+        System.out.println("newtree "+ new ObjectMapper().writeValueAsString(newTree) );
+        System.out.println("newtree "+ new ObjectMapper().writeValueAsString(fetched) );
+
+        assertThat(fetched, is(equalTo(newTree)));
+
     }
 
     @Test
@@ -89,6 +90,8 @@ public class TreeDaoTest extends CommonTest {
         newTree.setText("aaa");
         treeDao.save(newTree);
         String dbtext = treeDao.getTree(newTree.getId()).getText();
+        System.out.println("dbtext:"+ dbtext);
+        System.out.println("newtext: aaaa");
         assertThat(dbtext, is(not(equalTo("aaa"))));
     }
 
