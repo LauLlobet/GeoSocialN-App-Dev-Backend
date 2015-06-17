@@ -1,15 +1,17 @@
 package com.tubtale.otbackend;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 import org.hibernate.annotations.Type;
-import org.postgis.Point;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "Tree")
 @XmlRootElement
-
 public class Tree {
 
     @Id
@@ -29,8 +31,8 @@ public class Tree {
     @Column(name = "timestamp", nullable = true)
     private java.sql.Timestamp timestamp;
 
-    @Type(type="org.hibernate.spatial.GeometryType")
-    @Column(name = "location", nullable = true)
+    @Column(columnDefinition="Geometry", name="location")
+    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point location;
 
     public Tree() {
@@ -47,7 +49,9 @@ public class Tree {
     }
 
     public void setLocation(float longitude, float latitude){
-        this.location = new Point(longitude,latitude);
+        GeometryFactory geomFac = new GeometryFactory();
+        Coordinate coord = new Coordinate(longitude,latitude);
+        this.location = geomFac.createPoint(coord);
     }
 
     public Point getLocation(){

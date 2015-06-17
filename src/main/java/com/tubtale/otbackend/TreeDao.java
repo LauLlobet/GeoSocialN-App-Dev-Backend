@@ -22,7 +22,7 @@ public class TreeDao {
     }
 
     public void deleteAllTrees() {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         session.createQuery("delete from Tree").executeUpdate();
         session.close();
     }
@@ -31,20 +31,20 @@ public class TreeDao {
         return getAllTrees(0, 0);
     }
     public List<Tree> getAllTrees(int firstResult, int maxResult) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree").addEntity(Tree.class).list();
         return trees;
     }
 
     public Tree getTree(int id) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         Tree tree = (Tree) session.get(Tree.class, id);
         session.close();
         return tree;
     }
 
     public void save(Tree tree) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         if(tree.getId() != null)
             return;
         session.saveOrUpdate(tree);
@@ -53,7 +53,7 @@ public class TreeDao {
     }
 
     public Tree deleteTree(int id) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         Tree tree = getTree(id);
         if (tree != null) {
             session.delete(tree);
