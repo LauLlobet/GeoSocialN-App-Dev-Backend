@@ -1,5 +1,8 @@
 package com.tubtale.otbackend;
 
+import org.hibernate.annotations.Type;
+import org.postgis.Point;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -26,8 +29,13 @@ public class Tree {
     @Column(name = "timestamp", nullable = true)
     private java.sql.Timestamp timestamp;
 
+    @Type(type="org.hibernate.spatial.GeometryType")
+    @Column(name = "location", nullable = true)
+    private Point location;
+
     public Tree() {
         id = null;
+        setLocation(110,110);
     }
 
     public Integer getId() {
@@ -36,6 +44,14 @@ public class Tree {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setLocation(float longitude, float latitude){
+        this.location = new Point(longitude,latitude);
+    }
+
+    public Point getLocation(){
+        return location;
     }
 
     public String getText() {

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.opengeo:geodb:0.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opengeo/geodb/0.7/7085b81f3663b848a2cea16ca9ec8e0170d15c86/geodb-0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opengeo/geodb/0.7/ce3497bbfcaa0c0c39aca0c46434ae957c67dbcb/geodb-0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
