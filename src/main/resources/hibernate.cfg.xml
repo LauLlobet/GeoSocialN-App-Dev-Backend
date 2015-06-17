@@ -9,7 +9,7 @@
         <property name="connection.username">ourtree</property>
         <property name="connection.password">ourtree</property>
         <property name="connection.pool_size">1</property>
-        <property name="dialect">org.hibernatespatial.postgis.PostgisDialect</property>
+        <property name="dialect">org.hibernate.spatial.dialect.postgis.PostgisDialect</property>
         <property name="current_session_context_class">thread</property>
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
         <property name="show_sql">false</property>
