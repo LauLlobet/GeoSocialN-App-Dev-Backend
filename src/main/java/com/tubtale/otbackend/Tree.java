@@ -52,6 +52,7 @@ public class Tree {
         GeometryFactory geomFac = new GeometryFactory();
         Coordinate coord = new Coordinate(longitude,latitude);
         this.location = geomFac.createPoint(coord);
+        this.location.setSRID(4326);
     }
 
     public Point getLocation(){
