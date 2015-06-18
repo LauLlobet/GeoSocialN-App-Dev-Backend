@@ -33,6 +33,7 @@ public class TreeApi {
     @DELETE
     @JSONP(queryParam = "callback")
     public void deleteAllTrees() throws Exception {
+        System.out.println("deleting ALL trees");
         TreeDao.getInstance().deleteAllTrees();
     }
 

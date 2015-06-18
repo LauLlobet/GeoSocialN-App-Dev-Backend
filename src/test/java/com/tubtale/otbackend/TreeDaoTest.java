@@ -1,11 +1,9 @@
 package com.tubtale.otbackend;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.*;
@@ -23,7 +21,7 @@ public class TreeDaoTest extends CommonTest {
         treeDao.deleteAllTrees();
     }
 
-  /*  @Test
+    @Test
     public void getOneTreesShouldReturnAllTrees() {
 
         assertThat(treeDao.getAllTrees().size(), is(equalTo(1)));
@@ -63,7 +61,7 @@ public class TreeDaoTest extends CommonTest {
         Tree actual = treeDao.getTree(123);
         assertThat(actual, is(nullValue()));
     }
-*/
+
     @Test
     public void saveTreeShouldSaveTheNewTree() throws Exception{
         Tree newTree = new Tree();
@@ -71,10 +69,12 @@ public class TreeDaoTest extends CommonTest {
         newTree.setIp("A");
         newTree.setTimestamp(new java.sql.Timestamp(0));
         newTree.setMetersToHide(20);
+        newTree.setLocation(32,33);
         treeDao.save(newTree);
         Tree fetched = treeDao.getTree(newTree.getId());
         assertThat(fetched, is(equalTo(newTree)));
-        System.out.println("Position:------------------:"+fetched.getLocation().getX());
+        assertThat(fetched.getX(), is(newTree.getX()));
+        assertThat(fetched.getX(), is((double)32));
     }
 
     @Test

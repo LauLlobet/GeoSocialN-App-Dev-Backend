@@ -54,7 +54,9 @@ public class TreeDao {
         EntityManager em = HibernateUtil.createEntityManager();
         Tree tree = getTree(id);
         try {
-            em.remove(em.contains(tree) ? tree : em.merge(tree));
+            Session session = HibernateUtil.getSession();
+            session.createQuery("delete from Tree where id="+ id).executeUpdate();
+            session.close();
             return tree;
         }catch (Exception e){
             return null;

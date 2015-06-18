@@ -105,20 +105,25 @@ public class TreeApiTest  extends CommonTest {
 
     @Test
     public void putV1ItemsShouldUpdateExistingTree() throws Exception {
-        treeDao.save(tree);
         tree.setText("This is new title");
         String json = new ObjectMapper().writeValueAsString(tree);
         Response r = itemsTarget.request().put(Entity.text(json));
+
         Tree putAnsTree = extractTreeContentOfAGetOrPut(r.readEntity(String.class));
         Tree actual = treeDao.getTree(putAnsTree.getId());
+        tree.setId(putAnsTree.getId());
+
+        System.out.println("tree   ->"+json);
+        System.out.println("actual ->"+new ObjectMapper().writeValueAsString(actual));
+
         assertThat(actual, is(equalTo(tree)));
+        assertThat(putAnsTree, is(equalTo(tree)));
         assertThat(treeDao.getAllTrees().size(), is(1));
     }
 
     @Test
     public void deleteV1ItemsIdShouldDeleteExistingTree() throws Exception {
         List<Tree> trees = insertTrees(3);
-        treeDao.save(trees.get(0));
         itemsTarget.path("/" + trees.get(0).getId()).request().delete();
         assertThat(treeDao.getAllTrees().size(), is(trees.size() - 1));
     }

@@ -32,8 +32,7 @@ public class HibernateUtil {
     }
 
     public static Session getSession() {
-        EntityManager em =  createEntityManager();
-        return em.unwrap(Session.class);
+        return createEntityManager().unwrap(Session.class);
     }
 
 }

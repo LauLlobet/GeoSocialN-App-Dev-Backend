@@ -3,6 +3,7 @@ package com.tubtale.otbackend;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "Tree")
 @XmlRootElement
+@JsonIgnoreProperties({"location"})
 public class Tree {
 
     @Id
@@ -34,6 +36,11 @@ public class Tree {
     @Column(columnDefinition="Geometry", name="location")
     @Type(type = "org.hibernate.spatial.GeometryType")
     private Point location;
+
+    @Transient
+    private double x;
+    @Transient
+    private double y;
 
     public Tree() {
         id = null;
@@ -98,11 +105,22 @@ public class Tree {
     public int hashCode() {
         int result;
         //long temp;
-        result = id;
+        result = id == null ? 0 : id;
         result = 31 * result + (text != null ? text.hashCode() : 0);
         //temp = Double.doubleToLongBits(price);
         //result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
+    public double getX(){
+        this.x = location.getX();
+        return this.x;
+    }
+    public double getY(){
+        this.y = location.getY();
+        return this.y;
+    }
 }
+
+
 
