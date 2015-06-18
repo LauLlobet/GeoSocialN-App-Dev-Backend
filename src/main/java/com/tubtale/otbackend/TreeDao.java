@@ -1,11 +1,9 @@
 package com.tubtale.otbackend;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
 
 
 public class TreeDao {
@@ -53,14 +51,14 @@ public class TreeDao {
     }
 
     public Tree deleteTree(int id) {
-        Session session = HibernateUtil.getSession();
+        EntityManager em = HibernateUtil.createEntityManager();
         Tree tree = getTree(id);
-        if (tree != null) {
-            session.delete(tree);
-            session.flush();
+        try {
+            em.remove(em.contains(tree) ? tree : em.merge(tree));
+            return tree;
+        }catch (Exception e){
+            return null;
         }
-        session.close();
-        return tree;
     }
 
 

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tubtale.otbackend.TreeDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-06-18T08:34:38" hostname="mbaLau.local" time="222.493">
+  <properties/>
+  <testcase name="saveTreeShouldSaveTheNewTree" classname="com.tubtale.otbackend.TreeDaoTest" time="208.962"/>
+  <testcase name="deleteTreeShouldReturnNullIfTreeDoesNotExist" classname="com.tubtale.otbackend.TreeDaoTest" time="1.225"/>
+  <testcase name="deleteTreeShouldReturnDeletedTree" classname="com.tubtale.otbackend.TreeDaoTest" time="3.276"/>
+  <testcase name="deleteTreeShouldDeleteSpecifiedTree" classname="com.tubtale.otbackend.TreeDaoTest" time="6.144"/>
+  <testcase name="shouldBeImpossibleToUpdate" classname="com.tubtale.otbackend.TreeDaoTest" time="2.884"/>
+  <system-out><![CDATA[Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Position:------------------:110.0
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+dbtext:bbb
+newtext: aaaa
+Hibernate: 
+    delete 
+    from
+        Tree
+]]></system-out>
+  <system-err><![CDATA[de juny 18, 2015 10:34:38 AM org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+de juny 18, 2015 10:34:38 AM org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+de juny 18, 2015 10:34:38 AM org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+de juny 18, 2015 10:34:38 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: org.hibernate.events.jpa
+	...]
+de juny 18, 2015 10:34:38 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.10.Final}
+de juny 18, 2015 10:34:38 AM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+de juny 18, 2015 10:34:38 AM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+de juny 18, 2015 10:34:39 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+de juny 18, 2015 10:34:39 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+de juny 18, 2015 10:34:39 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.26.137.110:5432/ourtree?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory]
+de juny 18, 2015 10:34:39 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000046: Connection properties: {user=ourtree, password=****}
+de juny 18, 2015 10:34:39 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000006: Autocommit mode: false
+de juny 18, 2015 10:34:39 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
+de juny 18, 2015 10:38:01 AM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+de juny 18, 2015 10:38:01 AM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+de juny 18, 2015 10:38:01 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+de juny 18, 2015 10:38:02 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+de juny 18, 2015 10:38:02 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+de juny 18, 2015 10:38:02 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+de juny 18, 2015 10:38:04 AM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: public.tree
+de juny 18, 2015 10:38:04 AM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [meterstohide, ip, location, id, text, timestamp]
+de juny 18, 2015 10:38:04 AM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+de juny 18, 2015 10:38:04 AM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [tree_pkey]
+de juny 18, 2015 10:38:04 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+]]></system-err>
+</testsuite>
