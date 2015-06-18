@@ -18,12 +18,11 @@ public class TreeApi {
 
     @GET
     @JSONP(queryParam = "callback")
-    public String getAllTrees(@QueryParam("x") int x,
-                              @QueryParam("y") int y) throws Exception {
+    public String getAllTrees(@QueryParam("x") float x,
+                              @QueryParam("y") float y) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("number:"+x);
         mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
-        List<Tree> trees = TreeDao.getInstance().getAllTrees();
+        List<Tree> trees = TreeDao.getInstance().getAllTrees(x,y);
         for (Tree tree : trees) {
             tree.setIp(ITEMS_URL + "/" + tree.getId());
         }

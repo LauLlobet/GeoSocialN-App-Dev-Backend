@@ -64,7 +64,6 @@ public class TreeApiTest  extends CommonTest {
         itemsTarget = itemsTarget.queryParam("x", 3);
         itemsTarget = itemsTarget.queryParam("y",7);
         String json = itemsTarget.request().get(String.class);
-        System.out.println(json);
         List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
         assertThat(actual.size(), is(size));
         assertThat(extractEmptyTreesCountContentOfAGetOrPut(json), is(10));
@@ -104,17 +103,15 @@ public class TreeApiTest  extends CommonTest {
     }
 
     @Test
-    public void putV1ItemsShouldUpdateExistingTree() throws Exception {
+    public void putV1ItemsShouldBePostableAndGettable() throws Exception {
         tree.setText("This is new title");
+        tree.setLocation(123,123);
         String json = new ObjectMapper().writeValueAsString(tree);
         Response r = itemsTarget.request().put(Entity.text(json));
 
         Tree putAnsTree = extractTreeContentOfAGetOrPut(r.readEntity(String.class));
         Tree actual = treeDao.getTree(putAnsTree.getId());
         tree.setId(putAnsTree.getId());
-
-        System.out.println("tree   ->"+json);
-        System.out.println("actual ->"+new ObjectMapper().writeValueAsString(actual));
 
         assertThat(actual, is(equalTo(tree)));
         assertThat(putAnsTree, is(equalTo(tree)));
@@ -126,6 +123,28 @@ public class TreeApiTest  extends CommonTest {
         List<Tree> trees = insertTrees(3);
         itemsTarget.path("/" + trees.get(0).getId()).request().delete();
         assertThat(treeDao.getAllTrees().size(), is(trees.size() - 1));
+    }
+
+    @Test
+    public void getTreesShouldReturnOrderedTrees() throws Exception{
+        double[] x = {1.5 , 1.40625 ,    1.40625   ,      1.206   ,  50  };
+        double[] y = { 45 , 38.6718 ,         45   ,      38.671  ,  50  };
+        String[] m = { "3" ,    "1" ,        "2"   ,        "0"   ,  "4" };
+        insertTrees(5,x,y,m);
+
+        itemsTarget = itemsTarget.queryParam("x", 1.205);
+        itemsTarget = itemsTarget.queryParam("y", 38.67);
+        String json = itemsTarget.request().get(String.class);
+
+        List<Tree> list = extractTreeListContentOfAGetOrPut(json);
+        assertThat(list.size(), is(5));
+        assertThat(extractTreeListContentOfAGetOrPut(json).size(), is(list.size()));
+        String ordered = list.get(0).getText() +
+                        list.get(1).getText() +
+                        list.get(2).getText() +
+                list.get(3).getText() +
+                        list.get(4).getText();
+        assertThat(ordered,is(equalTo("01234")));
     }
 
     public Tree extractTreeContentOfAGetOrPut(String restAns) throws  Exception{

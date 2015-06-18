@@ -28,4 +28,16 @@ public class CommonTest {
         return trees;
     }
 
+    protected List<Tree> insertTrees(int count,double[] listX,double[] listY,String[] meters) {
+        List<Tree> trees = new ArrayList<Tree>();
+        for (int index = 0; index < count; index++) {
+            Tree tree = new Tree();
+            tree.setText(meters[index]);
+            tree.setLocation(listX[index], listY[index]);
+            treeDao.save(tree);
+            trees.add(tree);
+        }
+        return trees;
+    }
+
 }

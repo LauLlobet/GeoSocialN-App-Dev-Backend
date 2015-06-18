@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">9</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m50.17s</div>
+<div class="counter">4m4.34s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,27 +82,32 @@
 </thead>
 <tr>
 <td class="success">deleteV1ItemsIdShouldDeleteExistingTree</td>
-<td>4.983s</td>
+<td>5.358s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteV1ItemsShouldDeleteAllTrees</td>
-<td>2.558s</td>
+<td>3.276s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTreesShouldReturnOrderedTrees</td>
+<td>5.938s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsIdShouldReturnSpecifiedTree</td>
-<td>3m25.53s</td>
+<td>3m32.57s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsShouldReturnListOfTrees</td>
-<td>4.231s</td>
+<td>4.732s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsShouldReturnTypeApplicationJson</td>
-<td>2.458s</td>
+<td>2.560s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -111,13 +116,13 @@
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">putV1ItemsShouldUpdateExistingTree</td>
-<td>3.788s</td>
+<td class="success">putV1ItemsShouldBePostableAndGettable</td>
+<td>3.489s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">v1ItemsShouldReturnStatus200</td>
-<td>2.725s</td>
+<td>2.528s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -181,23 +186,15 @@ Hibernate:
         (ip, location, metersToHide, text, timestamp, id) 
     values
         (?, ?, ?, ?, ?, ?)
-number:3
 Hibernate: 
     SELECT
         * 
     FROM
-        Tree
-{ &quot;treeContent&quot;:[{&quot;id&quot;:510,&quot;text&quot;:&quot;i'm the first tree in all forests&quot;,&quot;ip&quot;:&quot;/api/v1/items/510&quot;},{&quot;id&quot;:511,&quot;text&quot;:&quot;i'm the first tree in all forests&quot;,&quot;ip&quot;:&quot;/api/v1/items/511&quot;},{&quot;id&quot;:512,&quot;text&quot;:&quot;i'm the first tree in all forests&quot;,&quot;ip&quot;:&quot;/api/v1/items/512&quot;}], &quot;emptyTrees&quot;:10 }
-Hibernate: 
-    delete 
-    from
-        Tree
-number:0
-Hibernate: 
-    SELECT
-        * 
-    FROM
-        Tree
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(3.0 7.0)',
+        4326)) limit 7
 Hibernate: 
     delete 
     from
@@ -228,7 +225,59 @@ Hibernate:
     SELECT
         * 
     FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
         Tree
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.timestamp as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
 Hibernate: 
     delete 
     from
@@ -242,7 +291,24 @@ Hibernate:
     SELECT
         * 
     FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
         Tree
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
 Hibernate: 
     delete 
     from
@@ -259,33 +325,53 @@ Hibernate:
         (?, ?, ?, ?, ?, ?)
 Hibernate: 
     select
-        tree0_.id as id1_0_0_,
-        tree0_.ip as ip2_0_0_,
-        tree0_.location as location3_0_0_,
-        tree0_.metersToHide as metersTo4_0_0_,
-        tree0_.text as text5_0_0_,
-        tree0_.timestamp as timestam6_0_0_ 
-    from
-        Tree tree0_ 
-    where
-        tree0_.id=?
-tree   -&gt;{&quot;id&quot;:null,&quot;text&quot;:&quot;This is new title&quot;,&quot;ip&quot;:null,&quot;metersToHide&quot;:0,&quot;timestamp&quot;:null,&quot;x&quot;:110.0,&quot;y&quot;:110.0}
-actual -&gt;{&quot;id&quot;:514,&quot;text&quot;:&quot;This is new title&quot;,&quot;ip&quot;:null,&quot;metersToHide&quot;:0,&quot;timestamp&quot;:null,&quot;x&quot;:110.0,&quot;y&quot;:110.0}
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
 Hibernate: 
     SELECT
         * 
     FROM
-        Tree
-Hibernate: 
-    delete 
-    from
-        Tree
-number:0
-Hibernate: 
-    SELECT
-        * 
-    FROM
-        Tree
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(1.2050000429153442 38.66999816894531)',
+        4326)) limit 7
 Hibernate: 
     delete 
     from
@@ -337,12 +423,16 @@ Hibernate:
     from
         Tree 
     where
-        id=515
+        id=663
 Hibernate: 
     SELECT
         * 
     FROM
-        Tree
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
 Hibernate: 
     delete 
     from
@@ -353,61 +443,61 @@ Hibernate:
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>de juny 18, 2015 12:36:07 PM org.glassfish.jersey.server.ApplicationHandler initialize
+<pre>de juny 18, 2015 2:17:50 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-de juny 18, 2015 12:36:08 PM org.glassfish.grizzly.http.server.NetworkListener start
+de juny 18, 2015 2:17:51 PM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-de juny 18, 2015 12:36:08 PM org.glassfish.grizzly.http.server.HttpServer start
+de juny 18, 2015 2:17:51 PM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer] Started.
-de juny 18, 2015 12:36:09 PM org.hibernate.ejb.HibernatePersistence logDeprecation
+de juny 18, 2015 2:17:52 PM org.hibernate.ejb.HibernatePersistence logDeprecation
 WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-de juny 18, 2015 12:36:09 PM org.hibernate.ejb.HibernatePersistence logDeprecation
+de juny 18, 2015 2:17:52 PM org.hibernate.ejb.HibernatePersistence logDeprecation
 WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-de juny 18, 2015 12:36:09 PM org.hibernate.ejb.HibernatePersistence logDeprecation
+de juny 18, 2015 2:17:52 PM org.hibernate.ejb.HibernatePersistence logDeprecation
 WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-de juny 18, 2015 12:36:09 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+de juny 18, 2015 2:17:52 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [
 	name: org.hibernate.events.jpa
 	...]
-de juny 18, 2015 12:36:09 PM org.hibernate.Version logVersion
+de juny 18, 2015 2:17:52 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.3.10.Final}
-de juny 18, 2015 12:36:10 PM org.hibernate.cfg.Environment &lt;clinit&gt;
+de juny 18, 2015 2:17:52 PM org.hibernate.cfg.Environment &lt;clinit&gt;
 INFO: HHH000206: hibernate.properties not found
-de juny 18, 2015 12:36:10 PM org.hibernate.cfg.Environment buildBytecodeProvider
+de juny 18, 2015 2:17:52 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-de juny 18, 2015 12:36:10 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+de juny 18, 2015 2:17:53 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-de juny 18, 2015 12:36:10 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 18, 2015 2:17:53 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-de juny 18, 2015 12:36:10 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 18, 2015 2:17:53 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.26.137.110:5432/ourtree?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory]
-de juny 18, 2015 12:36:10 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 18, 2015 2:17:53 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=ourtree, password=****}
-de juny 18, 2015 12:36:10 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 18, 2015 2:17:53 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-de juny 18, 2015 12:36:10 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 18, 2015 2:17:53 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-de juny 18, 2015 12:39:27 PM org.hibernate.dialect.Dialect &lt;init&gt;
+de juny 18, 2015 2:21:18 PM org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
-de juny 18, 2015 12:39:28 PM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+de juny 18, 2015 2:21:19 PM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-de juny 18, 2015 12:39:28 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+de juny 18, 2015 2:21:19 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-de juny 18, 2015 12:39:29 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 18, 2015 2:21:19 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000228: Running hbm2ddl schema update
-de juny 18, 2015 12:39:29 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 18, 2015 2:21:19 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000102: Fetching database metadata
-de juny 18, 2015 12:39:29 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 18, 2015 2:21:20 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000396: Updating schema
-de juny 18, 2015 12:39:31 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+de juny 18, 2015 2:21:21 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
 INFO: HHH000261: Table found: public.tree
-de juny 18, 2015 12:39:31 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+de juny 18, 2015 2:21:21 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
 INFO: HHH000037: Columns: [meterstohide, ip, location, id, text, timestamp]
-de juny 18, 2015 12:39:31 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+de juny 18, 2015 2:21:21 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
 INFO: HHH000108: Foreign keys: []
-de juny 18, 2015 12:39:31 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+de juny 18, 2015 2:21:21 PM org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
 INFO: HHH000126: Indexes: [tree_pkey]
-de juny 18, 2015 12:39:31 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 18, 2015 2:21:21 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000232: Schema update complete
 </pre>
 </span>
@@ -415,7 +505,7 @@ INFO: HHH000232: Schema update complete
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.1</a> at 18/06/2015 12:39:59</p>
+<a href="http://www.gradle.org">Gradle 2.1</a> at 18/06/2015 14:21:56</p>
 </div>
 </div>
 </body>

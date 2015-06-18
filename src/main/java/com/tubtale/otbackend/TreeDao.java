@@ -25,13 +25,16 @@ public class TreeDao {
         session.close();
     }
 
-    public List<Tree> getAllTrees() {
-        return getAllTrees(0, 0);
-    }
-    public List<Tree> getAllTrees(int firstResult, int maxResult) {
+    public List<Tree> getAllTrees(double longitud, double latitude) {
         Session session = HibernateUtil.getSession();
-        List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree").addEntity(Tree.class).list();
+        List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree " +
+                "ORDER BY ST_Distance(Tree.location, ST_Geomfromtext('POINT("+longitud+" "+latitude+")',4326)) " +
+                "limit 7").addEntity(Tree.class).list();
         return trees;
+    }
+
+    public List<Tree> getAllTrees() {
+        return getAllTrees(0,0);
     }
 
     public Tree getTree(int id) {

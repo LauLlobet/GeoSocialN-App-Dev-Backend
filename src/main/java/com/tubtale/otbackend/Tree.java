@@ -55,7 +55,7 @@ public class Tree {
         this.id = id;
     }
 
-    public void setLocation(float longitude, float latitude){
+    public void setLocation(double longitude, double latitude){
         GeometryFactory geomFac = new GeometryFactory();
         Coordinate coord = new Coordinate(longitude,latitude);
         this.location = geomFac.createPoint(coord);
