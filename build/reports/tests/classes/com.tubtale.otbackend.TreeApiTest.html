@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">9</div>
+<div class="counter">11</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m48.63s</div>
+<div class="counter">4m8.68s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">88%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,87 +61,16 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
+<a href="#tab1">Standard output</a>
 </li>
 <li>
-<a href="#tab2">Standard output</a>
-</li>
-<li>
-<a href="#tab3">Standard error</a>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="getV1ItemsShouldReturnTheCorrectJson"></a>
-<h3 class="failures">getV1ItemsShouldReturnTheCorrectJson</h3>
-<span class="code">
-<pre>org.json.JSONException: Expected a ',' or ']' at character 23
-	at org.json.JSONTokener.syntaxError(JSONTokener.java:410)
-	at org.json.JSONArray.&lt;init&gt;(JSONArray.java:143)
-	at org.json.JSONTokener.nextValue(JSONTokener.java:348)
-	at org.json.JSONObject.&lt;init&gt;(JSONObject.java:205)
-	at org.json.JSONObject.&lt;init&gt;(JSONObject.java:402)
-	at org.skyscreamer.jsonassert.JSONParser.parseJSON(JSONParser.java:29)
-	at org.skyscreamer.jsonassert.JSONCompare.compareJSON(JSONCompare.java:35)
-	at org.skyscreamer.jsonassert.JSONCompare.compareJSON(JSONCompare.java:109)
-	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:220)
-	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:192)
-	at com.tubtale.otbackend.TreeApiTest.getV1ItemsShouldReturnTheCorrectJson(TreeApiTest.java:74)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:355)
-	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -153,122 +82,660 @@
 </thead>
 <tr>
 <td class="success">deleteV1ItemsIdShouldDeleteExistingTree</td>
-<td>5.018s</td>
+<td>4.198s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteV1ItemsShouldDeleteAllTrees</td>
-<td>2.700s</td>
+<td>1.384s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTreesShouldReturnNumberOfEmptyTrees</td>
+<td>5.531s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTreesShouldReturnOrderedTrees</td>
+<td>5.734s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsIdShouldReturnSpecifiedTree</td>
-<td>3m22.52s</td>
+<td>3m32.95s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsShouldReturnListOfTrees</td>
-<td>3.894s</td>
+<td>3.887s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">getV1ItemsShouldReturnTheCorrectJson</td>
-<td>2.972s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
 <td class="success">getV1ItemsShouldReturnTypeApplicationJson</td>
-<td>2.457s</td>
+<td>1.173s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">putV1ItemsIdShouldSaveNewTree</td>
-<td>3.034s</td>
+<td>2.559s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">putV1ItemsShouldUpdateExistingTree</td>
-<td>3.584s</td>
+<td class="success">putV1ItemsShouldBePostableAndGettable</td>
+<td>2.458s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">puttingTreeInAFullCellShouldReturnNull</td>
+<td>7.475s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">v1ItemsShouldReturnStatus200</td>
-<td>2.457s</td>
+<td>1.331s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>hlla : 0
-hlla : 0
-hlla : 0
-hlla : 0
-hlla : 0
-hlla : 0
-hlla : 6
-hlla : 0
-hlla : 0
-hlla : 0
-hlla : 7
-hlla : 0
----------&gt;{ &quot;treeContent&quot;:[{&quot;id&quot;:10,&quot;text&quot;:&quot;i'm the first tree in all forests&quot;,&quot;ip&quot;:&quot;/api/v1/items/10&quot;}], &quot;emptyTrees&quot;:0 }
+<pre>Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.&quot;timestamp&quot; as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+long2.0 lat:2.0 minlong:2.0 minlat2.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(2.0, 2.0, 2.0001, 2.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(2.0, 2.0, 2.0001, 2.0001, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(3.0 7.0)',
+        4326)) limit 7
+long3.0 lat:7.0 minlong:3.0 minlat7.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(3.0, 7.0, 3.0001, 7.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(3.0, 7.0, 3.0001, 7.0001, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+long0.0 lat:0.0 minlong:0.0 minlat0.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.&quot;timestamp&quot; as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+long0.0 lat:0.0 minlong:0.0 minlat0.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+long2.0 lat:2.0 minlong:2.0 minlat2.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(2.0, 2.0, 2.0001, 2.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(2.0, 2.0, 2.0001, 2.0001, 4326) 
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.&quot;timestamp&quot; as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(1.399999976158142 45.0000114440918)',
+        4326)) limit 7
+long1.4 lat:45.00001 minlong:1.4 minlat45.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+deleting ALL trees
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+long0.0 lat:0.0 minlong:0.0 minlat0.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(0.0, 0.0, 1.0E-4, 1.0E-4, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(1.4000500440597534 45.00006866455078)',
+        4326)) limit 7
+long1.40005 lat:45.00007 minlong:1.4 minlat45.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+long1.40005 lat:45.00007 minlong:1.4 minlat45.0
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(1.4, 45.0, 1.400099976158142, 45.0001, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(1.2050000429153442 38.66999816894531)',
+        4326)) limit 7
+long1.205 lat:38.67 minlong:1.205 minlat38.6699
+SELECT COUNT(*)FROM Tree WHERE Tree.location &amp;&amp; ST_MakeEnvelope(1.205, 38.6699, 1.2051000429153442, 38.66999898681641, 4326) 
+Hibernate: 
+    SELECT
+        COUNT(*)
+    FROM
+        Tree 
+    WHERE
+        Tree.location &amp;&amp; ST_MakeEnvelope(1.205, 38.6699, 1.2051000429153442, 38.66999898681641, 4326) 
+Hibernate: 
+    delete 
+    from
+        Tree
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        nextval ('hibernate_sequence')
+Hibernate: 
+    insert 
+    into
+        Tree
+        (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        tree0_.id as id1_0_0_,
+        tree0_.ip as ip2_0_0_,
+        tree0_.location as location3_0_0_,
+        tree0_.metersToHide as metersTo4_0_0_,
+        tree0_.text as text5_0_0_,
+        tree0_.&quot;timestamp&quot; as timestam6_0_0_ 
+    from
+        Tree tree0_ 
+    where
+        tree0_.id=?
+Hibernate: 
+    delete 
+    from
+        Tree 
+    where
+        id=1058
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        Tree 
+    ORDER BY
+        ST_Distance(Tree.location,
+        ST_Geomfromtext('POINT(0.0 0.0)',
+        4326)) limit 7
+Hibernate: 
+    delete 
+    from
+        Tree
 </pre>
 </span>
 </div>
-<div id="tab3" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>de juny 16, 2015 11:30:59 AM org.glassfish.jersey.server.ApplicationHandler initialize
+<pre>de juny 19, 2015 11:14:22 AM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-de juny 16, 2015 11:31:00 AM org.glassfish.grizzly.http.server.NetworkListener start
+de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-de juny 16, 2015 11:31:00 AM org.glassfish.grizzly.http.server.HttpServer start
+de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer] Started.
-de juny 16, 2015 11:31:01 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
-INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-de juny 16, 2015 11:31:01 AM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {4.3.4.Final}
-de juny 16, 2015 11:31:01 AM org.hibernate.cfg.Environment &lt;clinit&gt;
+de juny 19, 2015 11:14:25 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: org.hibernate.events.jpa
+	...]
+de juny 19, 2015 11:14:25 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.0.0.CR1}
+de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment &lt;clinit&gt;
 INFO: HHH000206: hibernate.properties not found
-de juny 16, 2015 11:31:01 AM org.hibernate.cfg.Environment buildBytecodeProvider
+de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-de juny 16, 2015 11:31:01 AM org.hibernate.cfg.Configuration configure
-INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-de juny 16, 2015 11:31:01 AM org.hibernate.cfg.Configuration getConfigurationInputStream
-INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-de juny 16, 2015 11:31:02 AM org.hibernate.cfg.Configuration doConfigure
-INFO: HHH000041: Configured SessionFactory: null
-de juny 16, 2015 11:31:02 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 19, 2015 11:14:25 AM org.hibernate.spatial.integration.SpatialService &lt;init&gt;
+INFO: HHH80000001: hibernate-spatial integration enabled : true
+de juny 19, 2015 11:14:25 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-de juny 16, 2015 11:31:02 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.26.137.110:5432/ourtree?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory]
-de juny 16, 2015 11:31:02 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=ourtree, password=****}
-de juny 16, 2015 11:31:02 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-de juny 16, 2015 11:31:02 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
-de juny 16, 2015 11:34:18 AM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-de juny 16, 2015 11:34:18 AM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
+de juny 19, 2015 11:14:28 AM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+de juny 19, 2015 11:17:47 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-de juny 16, 2015 11:34:19 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
-INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-de juny 16, 2015 11:34:19 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+de juny 19, 2015 11:17:47 AM org.hibernate.type.BasicTypeRegistry register
+INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@260a1e5d
+de juny 19, 2015 11:17:48 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+de juny 19, 2015 11:17:56 AM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-de juny 16, 2015 11:34:19 AM org.hibernate.tool.hbm2ddl.SchemaExport execute
-INFO: HHH000227: Running hbm2ddl schema export
-de juny 16, 2015 11:34:21 AM org.hibernate.tool.hbm2ddl.SchemaExport execute
-INFO: HHH000230: Schema export complete
 </pre>
 </span>
 </div>
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.1</a> at 16/06/2015 11:34:49</p>
+<a href="http://www.gradle.org">Gradle 2.1</a> at 19/06/2015 11:18:33</p>
 </div>
 </div>
 </body>

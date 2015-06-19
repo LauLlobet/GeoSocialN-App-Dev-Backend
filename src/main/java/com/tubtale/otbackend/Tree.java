@@ -1,39 +1,68 @@
 package com.tubtale.otbackend;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "Tree")
 @XmlRootElement
-
+@JsonIgnoreProperties({"location"})
 public class Tree {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "id")
-    int id;
+    Integer id;
 
-    @Column(name = "text")
+    @Column(name = "text", nullable = true)
     private String text;
 
-    @Column(name = "ip")
+    @Column(name = "ip", nullable = true)
     private String ip;
 
-    @Column(name = "metersToHide")
+    @Column(name = "metersToHide", nullable = true)
     private int metersToHide;
 
-    @Column(name = "timestamp")
+    @Column(name = "timestamp", nullable = true)
     private java.sql.Timestamp timestamp;
 
-    public Tree() { }
+    @Column(columnDefinition="Geometry", name="location")
+    private Point location;
 
-    public int getId() {
+    @Transient
+    private double x;
+    @Transient
+    private double y;
+
+    public Tree() {
+        id = null;
+        setLocation(110,110);
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setLocation(double longitude, double latitude){
+        GeometryFactory geomFac = new GeometryFactory();
+        Coordinate coord = new Coordinate(longitude,latitude);
+        this.location = geomFac.createPoint(coord);
+        this.location.setSRID(4326);
+    }
+
+    public Point getLocation(){
+        return location;
     }
 
     public String getText() {
@@ -62,7 +91,7 @@ public class Tree {
 
         Tree tree = (Tree) o;
 
-        if (id != tree.getId()) return false;
+        if (!id.equals(tree.getId())) return false;
         if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
         if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
         if (metersToHide != tree.getMetersToHide()) return false;
@@ -75,11 +104,22 @@ public class Tree {
     public int hashCode() {
         int result;
         //long temp;
-        result = id;
+        result = id == null ? 0 : id;
         result = 31 * result + (text != null ? text.hashCode() : 0);
         //temp = Double.doubleToLongBits(price);
         //result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
+    public double getX(){
+        this.x = location.getX();
+        return this.x;
+    }
+    public double getY(){
+        this.y = location.getY();
+        return this.y;
+    }
 }
+
+
 
