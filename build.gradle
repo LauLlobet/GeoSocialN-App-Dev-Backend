@@ -29,8 +29,8 @@ dependencies {
     compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 
     compile('org.geolatte:geolatte-geom:1.0')
-    compile('org.hibernate:hibernate-spatial:4.3')
-    compile('org.hibernate:hibernate-entitymanager:4.3.10.Final')
+    compile('org.hibernate:hibernate-spatial:5.0.0.CR1')
+    compile('org.hibernate:hibernate-entitymanager:5.0.0.CR1')
 
     compile files("main/resources")
 

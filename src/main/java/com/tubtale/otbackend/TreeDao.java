@@ -2,6 +2,7 @@ package com.tubtale.otbackend;
 
 import org.hibernate.Session;
 
+import java.math.BigInteger;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -21,7 +22,10 @@ public class TreeDao {
 
     public void deleteAllTrees() {
         Session session = HibernateUtil.getSession();
+        session.beginTransaction();
         session.createQuery("delete from Tree").executeUpdate();
+        session.flush();
+        session.getTransaction().commit();
         session.close();
     }
 
@@ -30,9 +34,29 @@ public class TreeDao {
         List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree " +
                 "ORDER BY ST_Distance(Tree.location, ST_Geomfromtext('POINT("+longitud+" "+latitude+")',4326)) " +
                 "limit 7").addEntity(Tree.class).list();
+        session.flush();
+        session.close();
         return trees;
     }
 
+    public int countTotalTreesInGridPoint(float longitude,float latitude){
+        //0.0001 => 10m
+        float minLongitude = (float)(Math.floor(longitude * 10000)/10000);
+        float minLatitude =  (float)(Math.floor(latitude * 10000)/10000);
+
+        System.out.println("long" + longitude + " lat:" + latitude + " minlong:" + minLongitude+" minlat"+ minLatitude);
+        Session session = HibernateUtil.getSession();
+        String query = "SELECT COUNT(*)" +
+                "FROM Tree " +
+                "WHERE " +
+                "Tree.location && " +
+                "ST_MakeEnvelope("+minLongitude+", "+minLatitude+", "+ (minLongitude+0.0001) +", "+ (minLatitude+0.0001) +", 4326) ";
+        System.out.println(query);
+        Integer total = ((BigInteger) session.createSQLQuery(query).uniqueResult()).intValue();
+        session.flush();
+        session.close();
+        return total;
+    }
     public List<Tree> getAllTrees() {
         return getAllTrees(0,0);
     }
@@ -45,11 +69,13 @@ public class TreeDao {
     }
 
     public void save(Tree tree) {
-        Session session = HibernateUtil.getSession();
         if(tree.getId() != null)
             return;
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
         session.saveOrUpdate(tree);
         session.flush();
+        session.getTransaction().commit();
         session.close();
     }
 

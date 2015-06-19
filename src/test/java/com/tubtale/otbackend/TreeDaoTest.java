@@ -14,6 +14,7 @@ public class TreeDaoTest extends CommonTest {
     @Before
     public void beforeTreeDaoTest() {
         treeDao.save(tree);
+        treeDao.deleteAllTrees();
     }
 
     @After
@@ -23,7 +24,6 @@ public class TreeDaoTest extends CommonTest {
 
     @Test
     public void getOneTreesShouldReturnAllTrees() {
-
         assertThat(treeDao.getAllTrees().size(), is(equalTo(1)));
     }
 
@@ -41,7 +41,7 @@ public class TreeDaoTest extends CommonTest {
 
     @Test
     public void getAllTreesShouldReturnAllTrees() {
-        int size = 12;
+        int size = 7;
         treeDao.deleteAllTrees();
         insertTrees(size);
         assertThat(treeDao.getAllTrees().size(), is(equalTo(size)));
@@ -106,5 +106,18 @@ public class TreeDaoTest extends CommonTest {
     public void deleteTreeShouldDeleteSpecifiedTree() {
         treeDao.deleteTree(tree.getId());
         assertThat(treeDao.getAllTrees().size(), is(equalTo(0)));
+    }
+
+    @Test
+    public void getTreesShouldReturnNumberOfEmptyTrees() throws Exception{
+        //0.0001 ==> 10m
+        double[] x = { 1.40015 ,    1.40009  ,      1.4   ,     1.40002  ,  1.40002 , 1.40005 };
+        double[] y = { 45.00001 ,     45     ,      45    ,    45.00002  , 45.00001 , 45.00001 };
+        String[] m = { "3"      ,     "1"    ,      "2"   ,      "0"     ,   "4"    ,    "5"   };
+        insertTrees(6,x,y,m);
+        assertThat(treeDao.countTotalTreesInGridPoint(1.40003f, 45.00001f), is(5));
+        assertThat(treeDao.countTotalTreesInGridPoint(1.40013f,45.00001f), is(1));
+        assertThat(treeDao.countTotalTreesInGridPoint(1.40019f,45.00002f), is(1));
+        assertThat(treeDao.countTotalTreesInGridPoint(1.40019f,45.00012f), is(0));
     }
 }

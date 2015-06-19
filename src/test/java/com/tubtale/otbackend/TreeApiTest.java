@@ -4,7 +4,6 @@ import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.*;
-import org.skyscreamer.jsonassert.JSONAssert;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -66,7 +65,6 @@ public class TreeApiTest  extends CommonTest {
         String json = itemsTarget.request().get(String.class);
         List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
         assertThat(actual.size(), is(size));
-        assertThat(extractEmptyTreesCountContentOfAGetOrPut(json), is(10));
     }
 
     @Test
@@ -83,7 +81,6 @@ public class TreeApiTest  extends CommonTest {
         String json = itemsTarget.path("/" + expected.getId()).request().get(String.class);
         Tree actual = extractTreeContentOfAGetOrPut(json);
         assertThat(actual, is(equalTo(expected)));
-        assertThat(extractEmptyTreesCountContentOfAGetOrPut(json),is(4));
     }
 
     @Test
@@ -99,7 +96,6 @@ public class TreeApiTest  extends CommonTest {
         assertThat(actual, is(not(nullValue())));
         assertThat(actual, is(equalTo(tree)));
         assertThat(treeDao.getAllTrees().size(), is(1));
-        assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonans),is(4));
     }
 
     @Test
@@ -107,6 +103,7 @@ public class TreeApiTest  extends CommonTest {
         tree.setText("This is new title");
         tree.setLocation(123,123);
         String json = new ObjectMapper().writeValueAsString(tree);
+
         Response r = itemsTarget.request().put(Entity.text(json));
 
         Tree putAnsTree = extractTreeContentOfAGetOrPut(r.readEntity(String.class));
@@ -142,9 +139,46 @@ public class TreeApiTest  extends CommonTest {
         String ordered = list.get(0).getText() +
                         list.get(1).getText() +
                         list.get(2).getText() +
-                list.get(3).getText() +
+                        list.get(3).getText() +
                         list.get(4).getText();
         assertThat(ordered,is(equalTo("01234")));
+    }
+
+    @Test
+    public void getTreesShouldReturnNumberOfEmptyTrees() throws Exception{
+        //0.0001 ==> 10m
+        double[] x = { 1.400005 ,    1.40009  ,      1.4   ,     1.40002  ,  1.40002  };
+        double[] y = { 45.00001 ,     45     ,      45    ,    45.00002  , 45.00001  };
+        String[] m = { "3"      ,     "1"    ,      "2"   ,      "0"     ,   "4"     };
+        insertTrees(5,x,y,m);
+
+        itemsTarget = itemsTarget.queryParam("x", 1.4000);
+        itemsTarget = itemsTarget.queryParam("y", 45.00001);
+        String json = itemsTarget.request().get(String.class);
+
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(json), is(TreeApi.numbersOfTreesPerGridCell-5));
+    }
+
+    @Test
+    public void puttingTreeInAFullCellShouldReturnNull() throws Exception{
+        //0.0001 ==> 10m
+        double[] x = { 1.40095 ,    1.40009  ,      1.4   ,     1.40002  ,  1.40002 , 1.40002  ,  1.40092  };
+        double[] y = { 45.00001 ,     45     ,      45    ,    45.00002  , 45.00001,  45.00001 , 45.00001  };
+        String[] m = { "3"      ,     "1"    ,      "2"   ,      "0"     ,   "4"   ,   "4"     ,   "4"       };
+        insertTrees(7,x,y,m);
+        itemsTarget = itemsTarget.queryParam("x", 1.40005);
+        itemsTarget = itemsTarget.queryParam("y", 45.000067);
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(itemsTarget.request().get(String.class)), is(0));
+        tree.setLocation(1.40005,45);
+        String json = new ObjectMapper().writeValueAsString(tree);
+
+        itemsTarget = itemsTarget.queryParam("x", 1.405);
+        itemsTarget = itemsTarget.queryParam("y", 38.67);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonAnswer = r.readEntity(String.class);
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonAnswer), is(0));
+        assertThat(extractTreeListContentOfAGetOrPut(jsonAnswer), is(nullValue()));
+
     }
 
     public Tree extractTreeContentOfAGetOrPut(String restAns) throws  Exception{
@@ -159,6 +193,9 @@ public class TreeApiTest  extends CommonTest {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(new StringReader(restAns));
         JsonNode contentNode = rootNode.get("treeContent");
+        if(contentNode.isNull()){
+            return null;
+        }
         return new ObjectMapper().readValue(contentNode,  objectMapper.getTypeFactory().constructCollectionType(List.class, Tree.class));
     }
 

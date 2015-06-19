@@ -34,7 +34,6 @@ public class Tree {
     private java.sql.Timestamp timestamp;
 
     @Column(columnDefinition="Geometry", name="location")
-    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point location;
 
     @Transient
