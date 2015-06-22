@@ -1,7 +1,12 @@
 apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'application'
+
 
 sourceCompatibility = 1.5
 version = '1.0'
+
+mainClassName = 'com.tubtale.otbackend.StandaloneServer'
 
 repositories {
     mavenCentral()
@@ -26,12 +31,15 @@ dependencies {
     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.7'
     compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.7'
     compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
-    compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 
+    compile 'postgresql:postgresql:9.1-901-1.jdbc4'
     compile('org.geolatte:geolatte-geom:1.0')
     compile('org.hibernate:hibernate-spatial:5.0.0.CR1')
     compile('org.hibernate:hibernate-entitymanager:5.0.0.CR1')
+    compile('javax:javaee-web-api:7.0');
+
 
     compile files("main/resources")
 
 }
+

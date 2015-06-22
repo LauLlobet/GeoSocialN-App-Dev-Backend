@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.sql.Timestamp;
 import java.util.List;
 
-@Path("v1/items")
+@Path("trees")
 @Produces(MediaType.APPLICATION_JSON)
 public class TreeApi {
 
@@ -61,6 +62,11 @@ public class TreeApi {
             return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;
         }
         Tree tree = new ObjectMapper().readValue(treeJson, Tree.class);
+        if(request != null){
+            String address = request.getRemoteAddr();
+            tree.setIp(address);
+        }
+        tree.setTimestamp(new Timestamp(System.currentTimeMillis()));
         TreeDao.getInstance().save(tree);
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4m8.68s</div>
+<div class="counter">4m22.34s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,57 +82,57 @@
 </thead>
 <tr>
 <td class="success">deleteV1ItemsIdShouldDeleteExistingTree</td>
-<td>4.198s</td>
+<td>3.893s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteV1ItemsShouldDeleteAllTrees</td>
-<td>1.384s</td>
+<td>1.285s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTreesShouldReturnNumberOfEmptyTrees</td>
-<td>5.531s</td>
+<td>4.807s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTreesShouldReturnOrderedTrees</td>
-<td>5.734s</td>
+<td>5.631s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsIdShouldReturnSpecifiedTree</td>
-<td>3m32.95s</td>
+<td>3m41.41s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsShouldReturnListOfTrees</td>
-<td>3.887s</td>
+<td>3.990s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getV1ItemsShouldReturnTypeApplicationJson</td>
-<td>1.173s</td>
+<td>1.114s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">putV1ItemsIdShouldSaveNewTree</td>
-<td>2.559s</td>
+<td>2.097s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">putV1ItemsShouldBePostableAndGettable</td>
-<td>2.458s</td>
+<td>9.713s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">puttingTreeInAFullCellShouldReturnNull</td>
-<td>7.475s</td>
+<td>7.328s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">v1ItemsShouldReturnStatus200</td>
-<td>1.331s</td>
+<td>1.079s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -246,6 +246,7 @@ Hibernate:
         (ip, location, metersToHide, text, &quot;timestamp&quot;, id) 
     values
         (?, ?, ?, ?, ?, ?)
+ANS:{ &quot;treeContent&quot;:{&quot;id&quot;:1313,&quot;text&quot;:&quot;This is new title&quot;,&quot;ip&quot;:null,&quot;metersToHide&quot;:0,&quot;timestamp&quot;:1434712577459,&quot;x&quot;:110.0,&quot;y&quot;:110.0},&quot;emptyTrees&quot;:5}
 Hibernate: 
     select
         tree0_.id as id1_0_0_,
@@ -669,7 +670,7 @@ Hibernate:
     from
         Tree 
     where
-        id=1058
+        id=1332
 Hibernate: 
     SELECT
         * 
@@ -689,45 +690,45 @@ Hibernate:
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>de juny 19, 2015 11:14:22 AM org.glassfish.jersey.server.ApplicationHandler initialize
+<pre>de juny 19, 2015 1:12:30 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.NetworkListener start
+de juny 19, 2015 1:12:31 PM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.HttpServer start
+de juny 19, 2015 1:12:31 PM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer] Started.
-de juny 19, 2015 11:14:25 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+de juny 19, 2015 1:12:32 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [
 	name: org.hibernate.events.jpa
 	...]
-de juny 19, 2015 11:14:25 AM org.hibernate.Version logVersion
+de juny 19, 2015 1:12:32 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {5.0.0.CR1}
-de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment &lt;clinit&gt;
+de juny 19, 2015 1:12:32 PM org.hibernate.cfg.Environment &lt;clinit&gt;
 INFO: HHH000206: hibernate.properties not found
-de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment buildBytecodeProvider
+de juny 19, 2015 1:12:32 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-de juny 19, 2015 11:14:25 AM org.hibernate.spatial.integration.SpatialService &lt;init&gt;
+de juny 19, 2015 1:12:32 PM org.hibernate.spatial.integration.SpatialService &lt;init&gt;
 INFO: HHH80000001: hibernate-spatial integration enabled : true
-de juny 19, 2015 11:14:25 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+de juny 19, 2015 1:12:32 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.26.137.110:5432/ourtree?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory]
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=ourtree, password=****}
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-de juny 19, 2015 11:14:28 AM org.hibernate.dialect.Dialect &lt;init&gt;
+de juny 19, 2015 1:12:35 PM org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
-de juny 19, 2015 11:17:47 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+de juny 19, 2015 1:16:04 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-de juny 19, 2015 11:17:47 AM org.hibernate.type.BasicTypeRegistry register
-INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@260a1e5d
-de juny 19, 2015 11:17:48 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 19, 2015 1:16:04 PM org.hibernate.type.BasicTypeRegistry register
+INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@76328fb1
+de juny 19, 2015 1:16:05 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000228: Running hbm2ddl schema update
-de juny 19, 2015 11:17:56 AM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
+de juny 19, 2015 1:16:12 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 </pre>
 </span>
@@ -735,7 +736,7 @@ INFO: HHH000397: Using ASTQueryTranslatorFactory
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.1</a> at 19/06/2015 11:18:33</p>
+<a href="http://www.gradle.org">Gradle 2.1</a> at 19/06/2015 13:16:54</p>
 </div>
 </div>
 </body>

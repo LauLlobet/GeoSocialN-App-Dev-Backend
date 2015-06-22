@@ -92,6 +92,7 @@ public class TreeApiTest  extends CommonTest {
         String jsonans = r.readEntity(String.class);
         Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
         tree.setId(putAnsTree.getId());
+        tree.setTimestamp(putAnsTree.getTimestamp());
         Tree actual = treeDao.getTree(putAnsTree.getId());
         assertThat(actual, is(not(nullValue())));
         assertThat(actual, is(equalTo(tree)));
@@ -106,9 +107,15 @@ public class TreeApiTest  extends CommonTest {
 
         Response r = itemsTarget.request().put(Entity.text(json));
 
-        Tree putAnsTree = extractTreeContentOfAGetOrPut(r.readEntity(String.class));
+
+
+
+        String ans = r.readEntity(String.class);
+        System.out.println("ANS:"+ans);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(ans);
         Tree actual = treeDao.getTree(putAnsTree.getId());
         tree.setId(putAnsTree.getId());
+        tree.setTimestamp(putAnsTree.getTimestamp());
 
         assertThat(actual, is(equalTo(tree)));
         assertThat(putAnsTree, is(equalTo(tree)));

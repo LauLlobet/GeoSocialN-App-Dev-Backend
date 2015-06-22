@@ -9,7 +9,7 @@ import java.net.URI;
 
 public class Server {
 
-    public static final String BASE_API_URI = "http://localhost:8080/api/";
+    public static final String BASE_API_URI = "http://127.0.0.1:8080/api/";
 
     public boolean getFileCacheEnabled() {
         return false;

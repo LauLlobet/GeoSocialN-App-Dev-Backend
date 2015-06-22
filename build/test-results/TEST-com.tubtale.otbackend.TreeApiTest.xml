@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.TreeApiTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2015-06-19T09:14:24" hostname="mbaLau.local" time="248.683">
+<testsuite name="com.tubtale.otbackend.TreeApiTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2015-06-19T11:12:31" hostname="mbaLau.local" time="262.348">
   <properties/>
-  <testcase name="getV1ItemsIdShouldReturnSpecifiedTree" classname="com.tubtale.otbackend.TreeApiTest" time="212.948"/>
-  <testcase name="getV1ItemsShouldReturnListOfTrees" classname="com.tubtale.otbackend.TreeApiTest" time="3.887"/>
-  <testcase name="putV1ItemsShouldBePostableAndGettable" classname="com.tubtale.otbackend.TreeApiTest" time="2.458"/>
-  <testcase name="v1ItemsShouldReturnStatus200" classname="com.tubtale.otbackend.TreeApiTest" time="1.331"/>
-  <testcase name="putV1ItemsIdShouldSaveNewTree" classname="com.tubtale.otbackend.TreeApiTest" time="2.559"/>
-  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.TreeApiTest" time="5.531"/>
-  <testcase name="deleteV1ItemsShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeApiTest" time="1.384"/>
-  <testcase name="getV1ItemsShouldReturnTypeApplicationJson" classname="com.tubtale.otbackend.TreeApiTest" time="1.173"/>
-  <testcase name="puttingTreeInAFullCellShouldReturnNull" classname="com.tubtale.otbackend.TreeApiTest" time="7.475"/>
-  <testcase name="getTreesShouldReturnOrderedTrees" classname="com.tubtale.otbackend.TreeApiTest" time="5.734"/>
-  <testcase name="deleteV1ItemsIdShouldDeleteExistingTree" classname="com.tubtale.otbackend.TreeApiTest" time="4.198"/>
+  <testcase name="getV1ItemsIdShouldReturnSpecifiedTree" classname="com.tubtale.otbackend.TreeApiTest" time="221.405"/>
+  <testcase name="getV1ItemsShouldReturnListOfTrees" classname="com.tubtale.otbackend.TreeApiTest" time="3.99"/>
+  <testcase name="putV1ItemsShouldBePostableAndGettable" classname="com.tubtale.otbackend.TreeApiTest" time="9.713"/>
+  <testcase name="v1ItemsShouldReturnStatus200" classname="com.tubtale.otbackend.TreeApiTest" time="1.079"/>
+  <testcase name="putV1ItemsIdShouldSaveNewTree" classname="com.tubtale.otbackend.TreeApiTest" time="2.097"/>
+  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.TreeApiTest" time="4.807"/>
+  <testcase name="deleteV1ItemsShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeApiTest" time="1.285"/>
+  <testcase name="getV1ItemsShouldReturnTypeApplicationJson" classname="com.tubtale.otbackend.TreeApiTest" time="1.114"/>
+  <testcase name="puttingTreeInAFullCellShouldReturnNull" classname="com.tubtale.otbackend.TreeApiTest" time="7.328"/>
+  <testcase name="getTreesShouldReturnOrderedTrees" classname="com.tubtale.otbackend.TreeApiTest" time="5.631"/>
+  <testcase name="deleteV1ItemsIdShouldDeleteExistingTree" classname="com.tubtale.otbackend.TreeApiTest" time="3.893"/>
   <system-out><![CDATA[Hibernate: 
     select
         nextval ('hibernate_sequence')
@@ -118,6 +118,7 @@ Hibernate:
         (ip, location, metersToHide, text, "timestamp", id) 
     values
         (?, ?, ?, ?, ?, ?)
+ANS:{ "treeContent":{"id":1313,"text":"This is new title","ip":null,"metersToHide":0,"timestamp":1434712577459,"x":110.0,"y":110.0},"emptyTrees":5}
 Hibernate: 
     select
         tree0_.id as id1_0_0_,
@@ -541,7 +542,7 @@ Hibernate:
     from
         Tree 
     where
-        id=1058
+        id=1332
 Hibernate: 
     SELECT
         * 
@@ -556,45 +557,45 @@ Hibernate:
     from
         Tree
 ]]></system-out>
-  <system-err><![CDATA[de juny 19, 2015 11:14:22 AM org.glassfish.jersey.server.ApplicationHandler initialize
+  <system-err><![CDATA[de juny 19, 2015 1:12:30 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.NetworkListener start
+de juny 19, 2015 1:12:31 PM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-de juny 19, 2015 11:14:24 AM org.glassfish.grizzly.http.server.HttpServer start
+de juny 19, 2015 1:12:31 PM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer] Started.
-de juny 19, 2015 11:14:25 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+de juny 19, 2015 1:12:32 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [
 	name: org.hibernate.events.jpa
 	...]
-de juny 19, 2015 11:14:25 AM org.hibernate.Version logVersion
+de juny 19, 2015 1:12:32 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {5.0.0.CR1}
-de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment <clinit>
+de juny 19, 2015 1:12:32 PM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-de juny 19, 2015 11:14:25 AM org.hibernate.cfg.Environment buildBytecodeProvider
+de juny 19, 2015 1:12:32 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-de juny 19, 2015 11:14:25 AM org.hibernate.spatial.integration.SpatialService <init>
+de juny 19, 2015 1:12:32 PM org.hibernate.spatial.integration.SpatialService <init>
 INFO: HHH80000001: hibernate-spatial integration enabled : true
-de juny 19, 2015 11:14:25 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+de juny 19, 2015 1:12:32 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.26.137.110:5432/ourtree?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory]
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=ourtree, password=****}
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-de juny 19, 2015 11:14:26 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+de juny 19, 2015 1:12:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-de juny 19, 2015 11:14:28 AM org.hibernate.dialect.Dialect <init>
+de juny 19, 2015 1:12:35 PM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
-de juny 19, 2015 11:17:47 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+de juny 19, 2015 1:16:04 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-de juny 19, 2015 11:17:47 AM org.hibernate.type.BasicTypeRegistry register
-INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@260a1e5d
-de juny 19, 2015 11:17:48 AM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+de juny 19, 2015 1:16:04 PM org.hibernate.type.BasicTypeRegistry register
+INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@76328fb1
+de juny 19, 2015 1:16:05 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
 INFO: HHH000228: Running hbm2ddl schema update
-de juny 19, 2015 11:17:56 AM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
+de juny 19, 2015 1:16:12 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 ]]></system-err>
 </testsuite>
