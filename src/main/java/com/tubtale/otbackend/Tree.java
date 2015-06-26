@@ -118,6 +118,14 @@ public class Tree {
         this.y = location.getY();
         return this.y;
     }
+
+    public void setX(float x){
+        setLocation(x,location.getY());
+    }
+
+    public void setY(float y){
+        setLocation(location.getX(),y);
+    }
 }
 
 

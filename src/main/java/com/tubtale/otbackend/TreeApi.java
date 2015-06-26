@@ -9,28 +9,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.lang.reflect.Array;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("trees")
 @Produces(MediaType.APPLICATION_JSON)
 public class TreeApi {
 
-    private static final String ITEMS_URL = "/api/v1/items";
     public static final int numbersOfTreesPerGridCell = 5;
 
     @GET
     @JSONP(queryParam = "callback")
     public String getAllTrees(@QueryParam("x") float x,
-                              @QueryParam("y") float y) throws Exception {
+                              @QueryParam("y") float y,
+                              @QueryParam("dontInclude") String dontIncludeStrArg) throws Exception {
+
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
-        List<Tree> trees = TreeDao.getInstance().getAllTrees(x,y);
-        for (Tree tree : trees) {
-            tree.setIp(ITEMS_URL + "/" + tree.getId());
+        System.out.println("dontinclude....." + dontIncludeStrArg);
+        try {
+            ArrayList<Integer> dontInclude = mapper.readValue(dontIncludeStrArg, mapper.getTypeFactory().constructCollectionType(List.class, Integer.class));
+            mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+            int numberOfTrees = 7 + dontInclude.size();
+            System.out.println("---------------DONT INCLUDE SIZE---------------------------->" + dontInclude.size());
+            List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
+            List<Tree> ansList = new ArrayList<Tree>();
+            for (Tree t : trees) {
+                if (!dontInclude.contains(t.getId())) {
+                    ansList.add(t);
+                }
+            }
+            int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x, y);
+            return "{ \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":" + emptyTrees + " }";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;
         }
-        int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
-        return "{ \"treeContent\":" + mapper.writeValueAsString(trees) +", \"emptyTrees\":"+emptyTrees+" }" ;
     }
 
     @DELETE
@@ -54,14 +69,15 @@ public class TreeApi {
     @PUT
     @JSONP(queryParam = "callback")
     public String putTree(String treeJson,
-                          @QueryParam("x") float x,
-                          @QueryParam("y") float y,
                           @Context HttpServletRequest request) throws Exception {
+        Tree tree = new ObjectMapper().readValue(treeJson, Tree.class);
+        float x = (float)tree.getX();
+        float y = (float)tree.getY();
+
         int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
         if( emptyTrees == 0 ){
             return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;
         }
-        Tree tree = new ObjectMapper().readValue(treeJson, Tree.class);
         if(request != null){
             String address = request.getRemoteAddr();
             tree.setIp(address);

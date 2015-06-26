@@ -25,9 +25,9 @@ public class FillDatabaseTest extends CommonTest {
         double[] y = { 45.00001 ,     45     ,      45    ,    45.00002  , 45.00001 , 45.00001 };
         String[] m = { "3"      ,     "1"    ,      "2"   ,      "0"     ,   "4"    ,    "5"   };
         insertTrees(6,x,y,m);
-        assertThat(treeDao.getAllTrees().size(),is(6));
+        assertThat(treeDao.getAllTrees(x[0], y[0], 7).size(),is(6));
         int count = treeDao.countTotalTreesInGridPoint(1.40003f, 45.00001f);
-        assertThat(treeDao.getAllTrees().size(),is(6));
+        assertThat(treeDao.getAllTrees(x[0], y[0], 7).size(),is(6));
         assertThat(count, is(5));
         /*assertThat(treeDao.countTotalTreesInGridPoint(1.40013f,45.00001f), is(1));
         assertThat(treeDao.countTotalTreesInGridPoint(1.40019f,45.00002f), is(1));

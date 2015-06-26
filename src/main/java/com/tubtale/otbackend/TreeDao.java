@@ -29,22 +29,24 @@ public class TreeDao {
         session.close();
     }
 
-    public List<Tree> getAllTrees(double longitud, double latitude) {
+    public List<Tree> getAllTrees(double longitud, double latitude, int numberOfTrees) {
         Session session = HibernateUtil.getSession();
         List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree " +
                 "ORDER BY ST_Distance(Tree.location, ST_Geomfromtext('POINT("+longitud+" "+latitude+")',4326)) " +
-                "limit 7").addEntity(Tree.class).list();
+                "limit "+numberOfTrees).addEntity(Tree.class).list();
         session.flush();
         session.close();
         return trees;
     }
 
+    public  List<Tree> getAllTrees(){
+        return getAllTrees(0,0,7);
+    }
     public int countTotalTreesInGridPoint(float longitude,float latitude){
         //0.0001 => 10m
         float minLongitude = (float)(Math.floor(longitude * 10000)/10000);
         float minLatitude =  (float)(Math.floor(latitude * 10000)/10000);
 
-        System.out.println("long" + longitude + " lat:" + latitude + " minlong:" + minLongitude+" minlat"+ minLatitude);
         Session session = HibernateUtil.getSession();
         String query = "SELECT COUNT(*)" +
                 "FROM Tree " +
@@ -57,10 +59,6 @@ public class TreeDao {
         session.close();
         return total;
     }
-    public List<Tree> getAllTrees() {
-        return getAllTrees(0,0);
-    }
-
     public Tree getTree(int id) {
         Session session = HibernateUtil.getSession();
         Tree tree = (Tree) session.get(Tree.class, id);

@@ -32,7 +32,7 @@ public class TreeApiTest  extends CommonTest {
     public void beforeTreeApiTest() throws Exception {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://localhost:8080/api/");
-        itemsTarget = target.path("v1/items");
+        itemsTarget = target.path("trees");
         objectMapper = new ObjectMapper();
     }
 
@@ -58,13 +58,38 @@ public class TreeApiTest  extends CommonTest {
 
     @Test
     public void getV1ItemsShouldReturnListOfTrees() throws Exception {
-        int size = 3;
-        insertTrees(size);
-        itemsTarget = itemsTarget.queryParam("x", 3);
-        itemsTarget = itemsTarget.queryParam("y",7);
+        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
+        double[] y = { 0,0,0,0,0,0,0,0,0};
+        String[] m = { "3","1","2","6","4","5","7","8","9"};
+        insertTrees(9,x,y,m);
+        itemsTarget = itemsTarget.queryParam("dontInclude","[]");
         String json = itemsTarget.request().get(String.class);
         List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
-        assertThat(actual.size(), is(size));
+        assertThat(actual.size(), is(7));
+    }
+
+
+    @Test
+    public void getV1ItemsShouldReturnListOfTreesWithoutExceptionsFromTheList() throws Exception {
+        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
+        double[] y = { 0,0,0,0,0,0,0,0,0};
+        String[] m = { "0","1","2","3","4","5","6","7","8"};
+        List<Tree> list = insertTrees(9,x,y,m);
+
+        String exceptions = "["+list.get(1).getId()+","+list.get(3).getId()+","+list.get(5).getId()+"]";
+        itemsTarget = itemsTarget.queryParam("dontInclude",exceptions);
+        itemsTarget = itemsTarget.queryParam("x",1.1);
+        itemsTarget = itemsTarget.queryParam("y",0);
+        String json = itemsTarget.request().get(String.class);
+        List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
+        String receivedOrder ="";
+        for(Tree t: actual){
+            receivedOrder+=t.getText();
+        }
+        String expectedOrder = "024678";
+
+        assertThat(receivedOrder, is(equalTo(expectedOrder)));
+
     }
 
     @Test
@@ -138,6 +163,7 @@ public class TreeApiTest  extends CommonTest {
 
         itemsTarget = itemsTarget.queryParam("x", 1.205);
         itemsTarget = itemsTarget.queryParam("y", 38.67);
+        itemsTarget = itemsTarget.queryParam("dontInclude","[]");
         String json = itemsTarget.request().get(String.class);
 
         List<Tree> list = extractTreeListContentOfAGetOrPut(json);
@@ -176,11 +202,10 @@ public class TreeApiTest  extends CommonTest {
         itemsTarget = itemsTarget.queryParam("x", 1.40005);
         itemsTarget = itemsTarget.queryParam("y", 45.000067);
         assertThat(extractEmptyTreesCountContentOfAGetOrPut(itemsTarget.request().get(String.class)), is(0));
-        tree.setLocation(1.40005,45);
-        String json = new ObjectMapper().writeValueAsString(tree);
 
-        itemsTarget = itemsTarget.queryParam("x", 1.405);
-        itemsTarget = itemsTarget.queryParam("y", 38.67);
+
+        tree.setLocation(1.40005,45.000067);
+        String json = new ObjectMapper().writeValueAsString(tree);
         Response r = itemsTarget.request().put(Entity.text(json));
         String jsonAnswer = r.readEntity(String.class);
         assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonAnswer), is(0));
@@ -194,7 +219,6 @@ public class TreeApiTest  extends CommonTest {
         JsonNode contentNode = rootNode.get("treeContent");
         return new ObjectMapper().readValue(contentNode, Tree.class);
     }
-
 
     public List<Tree> extractTreeListContentOfAGetOrPut(String restAns) throws  Exception{
         ObjectMapper mapper = new ObjectMapper();
