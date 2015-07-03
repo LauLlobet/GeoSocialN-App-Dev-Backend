@@ -27,12 +27,10 @@ public class TreeApi {
                               @QueryParam("dontInclude") String dontIncludeStrArg) throws Exception {
 
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("dontinclude....." + dontIncludeStrArg);
         try {
             ArrayList<Integer> dontInclude = mapper.readValue(dontIncludeStrArg, mapper.getTypeFactory().constructCollectionType(List.class, Integer.class));
             mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
             int numberOfTrees = 7 + dontInclude.size();
-            System.out.println("---------------DONT INCLUDE SIZE---------------------------->" + dontInclude.size());
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
             for (Tree t : trees) {
