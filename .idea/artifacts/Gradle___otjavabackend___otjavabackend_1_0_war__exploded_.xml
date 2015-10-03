@@ -59,6 +59,8 @@
           <element id="library" level="project" name="Gradle: javax:javaee-web-api:7.0" />
           <element id="library" level="project" name="Gradle: org.apfloat:apfloat:1.8.2" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.6.1" />
+          <element id="library" level="project" name="Gradle: org.twitter4j:twitter4j-core:4.0.1" />
+          <element id="library" level="project" name="Gradle: com.ibm.icu:icu4j:51.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
