@@ -55,5 +55,8 @@ public class PublishingCityDistanceCalculator {
         return cityName.trim();
     }
 
+    public int getDistanceInKm() {
+        return Math.round(this.getDistanceInMeters() / 1000);
+    }
 
 }
