@@ -1,0 +1,11 @@
+psql -h 52.26.137.110 -U ourtree -d ourtree
+list tables \dt
+create table Cities ( id serial PRIMARY KEY NOT NULL, cityName  CHAR(40) NOT NULL,centerMonument CHAR(40));
+ALTER TABLE Cities ADD COLUMN location geometry(POINT,4326);
+INSERT INTO Cities(cityName, centerMonument, location) VALUES('Barcelona','Pl.Catalunya',ST_GeomFromText('POINT(41.38702799 2.17003465)', 4326));
+INSERT INTO Cities(cityName, centerMonument, location) VALUES('Madrid','Puerta del Sol',ST_GeomFromText('POINT(40.416944 -3.703611)', 4326));
+INSERT INTO Cities(cityName, centerMonument, location) VALUES('Girona','La lleona',ST_GeomFromText('POINT(41.988081 2.82408)', 4326));
+SELECT cityName, centerMonument, ST_distance_sphere(location,ST_GeomFromText('POINT(41.988083 2.82401)', 4326)) as distanceInMeters
+FROM Cities
+ORDER BY location <-> st_setsrid(st_makepoint(41.988081,2.82408),4326)
+LIMIT 1;
