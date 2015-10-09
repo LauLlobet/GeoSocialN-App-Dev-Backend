@@ -5,17 +5,18 @@ package com.tubtale.otbackend.twitterpublisher;
  */
 public class DistanceStringComposer {
     NearestCityDistanceCalculator distanceCalculator;
-    Boolean isFurtherThanOneKm = false;
+    Boolean isFurtherThanNKm = false;
+    int metersToBeFurtherThanNKm = 4000;
 
     public DistanceStringComposer(float longitude, float latitude) {
         distanceCalculator = new NearestCityDistanceCalculator(longitude,latitude);
-        if(distanceCalculator.getDistanceInMeters() > 1000){
-            isFurtherThanOneKm = true;
+        if(distanceCalculator.getDistanceInMeters() > metersToBeFurtherThanNKm){
+            isFurtherThanNKm = true;
         }
     }
     @Override
     public String toString() {
-        if(isFurtherThanOneKm){
+        if(isFurtherThanNKm){
             return this.stringWhenIsFutherThanOneKm();
         }else{
             return this.stringWhenIsNotFutherThanOneKm();

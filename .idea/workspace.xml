@@ -31,15 +31,15 @@
       <file leaf-file-name="TwitterMessageComposer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37365592" vertical-offset="1106" max-vertical-offset="1545">
-              <caret line="87" column="117" selection-start-line="87" selection-start-column="117" selection-end-line="87" selection-end-column="117" />
+            <state vertical-scroll-proportion="0.5072464" vertical-offset="515" max-vertical-offset="1530">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
-                <element signature="e#1064#1072#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-                <element signature="e#1944#1945#0" expanded="true" />
-                <element signature="e#1987#1988#0" expanded="true" />
-                <element signature="e#2099#2107#0" expanded="true" />
+                <element signature="e#1023#1031#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
+                <element signature="e#1975#1976#0" expanded="true" />
+                <element signature="e#2087#2095#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,8 +124,8 @@
       <file leaf-file-name="DistanceStringComposer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="660">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -585,7 +585,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/PublishingCityDistanceCalculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/NearestCityDistanceCalculatorTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterStringPublisher.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/sqlhistory.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TreeToTwitterPublisher.java" />
@@ -593,6 +592,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/NearestCityDistanceCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java" />
       </list>
     </option>
@@ -601,8 +601,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="90" />
+    <option name="x" value="165" />
+    <option name="y" value="128" />
     <option name="width" value="1390" />
     <option name="height" value="690" />
   </component>
@@ -1249,15 +1249,15 @@
       <workItem from="1435073184691" duration="17850000" />
       <workItem from="1436352265056" duration="3321000" />
       <workItem from="1443867880863" duration="16721000" />
-      <workItem from="1444143516463" duration="42073000" />
+      <workItem from="1444143516463" duration="44511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199096000" />
+    <option name="totallyTimeSpent" value="201534000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="90" width="1390" height="690" extended-state="0" />
+    <frame x="165" y="128" width="1390" height="690" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1775,23 +1775,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="660">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37365592" vertical-offset="1106" max-vertical-offset="1545">
-          <caret line="87" column="117" selection-start-line="87" selection-start-column="117" selection-end-line="87" selection-end-column="117" />
+        <state vertical-scroll-proportion="0.5072464" vertical-offset="515" max-vertical-offset="1530">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
-            <element signature="e#1064#1072#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-            <element signature="e#2099#2107#0" expanded="true" />
+            <element signature="e#1023#1031#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#2087#2095#0" expanded="true" />
           </folding>
         </state>
       </provider>
