@@ -4,11 +4,11 @@ package com.tubtale.otbackend.twitterpublisher;
  * Created by quest on 07/10/15.
  */
 public class DistanceStringComposer {
-    PublishingCityDistanceCalculator distanceCalculator;
+    NearestCityDistanceCalculator distanceCalculator;
     Boolean isFurtherThanOneKm = false;
 
     public DistanceStringComposer(float longitude, float latitude) {
-        distanceCalculator = new PublishingCityDistanceCalculator(longitude,latitude);
+        distanceCalculator = new NearestCityDistanceCalculator(longitude,latitude);
         if(distanceCalculator.getDistanceInMeters() > 1000){
             isFurtherThanOneKm = true;
         }

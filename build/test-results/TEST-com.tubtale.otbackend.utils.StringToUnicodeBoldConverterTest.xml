@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-10-09T09:20:43" hostname="mbaLau.local" time="0.023">
+  <properties/>
+  <testcase name="convertStringWithLowerAndUpperCasesAndStrangeCharacters" classname="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" time="0.01"/>
+  <testcase name="convertASingleChar" classname="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" time="0.002"/>
+  <testcase name="convertASingleCharLowercaseChar" classname="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" time="0.001"/>
+  <testcase name="throwsExcpetionWhenConvertASingleCharNonNormal" classname="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" time="0.001"/>
+  <testcase name="convertStringWithLowerAndUpperCases" classname="com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

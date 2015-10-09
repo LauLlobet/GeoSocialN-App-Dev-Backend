@@ -9,3 +9,5 @@ SELECT cityName, centerMonument, ST_distance_sphere(location,ST_GeomFromText('PO
 FROM Cities
 ORDER BY location <-> st_setsrid(st_makepoint(41.988081,2.82408),4326)
 LIMIT 1;
+
+gradle  war

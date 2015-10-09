@@ -1,6 +1,7 @@
 package com.tubtale.otbackend;
 
 
+import com.tubtale.otbackend.twitterpublisher.TreeToTwitterPublisher;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.glassfish.jersey.server.JSONP;
@@ -19,6 +20,10 @@ import java.util.List;
 public class TreeApi {
 
     public static final int numbersOfTreesPerGridCell = 5;
+    TreeToTwitterPublisher treeToTweeterPublisher;
+    public TreeApi(){
+        treeToTweeterPublisher = new TreeToTwitterPublisher();
+    }
 
     @GET
     @JSONP(queryParam = "callback")
@@ -82,6 +87,7 @@ public class TreeApi {
         }
         tree.setTimestamp(new Timestamp(System.currentTimeMillis()));
         TreeDao.getInstance().save(tree);
+        treeToTweeterPublisher.publishTreeInTwitterUsersMentioned(tree.getText(),x,y,tree.getId());
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }
 

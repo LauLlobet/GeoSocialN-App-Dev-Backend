@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m2.54s</div>
+<div class="counter">0.016s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">50%</div>
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -66,12 +66,6 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
-<li>
-<a href="#tab2">Standard output</a>
-</li>
-<li>
-<a href="#tab3">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
@@ -79,16 +73,15 @@
 <a name="composeANearPlace"></a>
 <h3 class="failures">composeANearPlace</h3>
 <span class="code">
-<pre>java.lang.AssertionError: 
-Expected: is &quot;10m de La lleona&quot;
-     but: was &quot;2m de la lleona&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)
-	at com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest.composeANearPlace(DistanceStringComposerTest.java:29)
+<pre>java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
+	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
+	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
+	at com.tubtale.otbackend.twitterpublisher.DistanceStringComposer.&lt;init&gt;(DistanceStringComposer.java:11)
+	at com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest.composeANearPlace(DistanceStringComposerTest.java:28)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -104,28 +97,82 @@ Expected: is &quot;10m de La lleona&quot;
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
 	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
 	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
 	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
 	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:355)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
 	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="composeAfarPlace"></a>
+<h3 class="failures">composeAfarPlace</h3>
+<span class="code">
+<pre>java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
+	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
+	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
+	at com.tubtale.otbackend.twitterpublisher.DistanceStringComposer.&lt;init&gt;(DistanceStringComposer.java:11)
+	at com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest.composeAfarPlace(DistanceStringComposerTest.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
 </pre>
 </span>
@@ -143,90 +190,26 @@ Expected: is &quot;10m de La lleona&quot;
 </thead>
 <tr>
 <td class="failures">composeANearPlace</td>
-<td>3m2.29s</td>
+<td>0.016s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">composeAfarPlace</td>
-<td>0.245s</td>
-<td class="success">passed</td>
+<td class="failures">composeAfarPlace</td>
+<td>0s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>Hibernate: 
-    SELECT
-        cityName,
-        centerMonument,
-        ST_distance_sphere(location,
-        ST_GeomFromText('POINT(41.98817825317383 2.824079990386963)',
-        4326)) as distanceInMeters 
-    FROM
-        Cities 
-    ORDER BY
-        location &lt;-&gt; st_setsrid(st_makepoint(41.98817825317383,
-        2.824079990386963),
-        4326) LIMIT 1;
-Hibernate: 
-    SELECT
-        cityName,
-        centerMonument,
-        ST_distance_sphere(location,
-        ST_GeomFromText('POINT(41.8109016418457 2.743285894393921)',
-        4326)) as distanceInMeters 
-    FROM
-        Cities 
-    ORDER BY
-        location &lt;-&gt; st_setsrid(st_makepoint(41.8109016418457,
-        2.743285894393921),
-        4326) LIMIT 1;
-</pre>
-</span>
-</div>
-<div id="tab3" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>d’oct. 07, 2015 8:58:22 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
-INFO: HHH000204: Processing PersistenceUnitInfo [
-	name: org.hibernate.events.jpa
-	...]
-d’oct. 07, 2015 8:58:22 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {5.0.0.CR1}
-d’oct. 07, 2015 8:58:22 PM org.hibernate.cfg.Environment &lt;clinit&gt;
-INFO: HHH000206: hibernate.properties not found
-d’oct. 07, 2015 8:58:22 PM org.hibernate.cfg.Environment buildBytecodeProvider
-INFO: HHH000021: Bytecode provider name : javassist
-d’oct. 07, 2015 8:58:22 PM org.hibernate.spatial.integration.SpatialService &lt;init&gt;
-INFO: HHH80000001: hibernate-spatial integration enabled : true
-d’oct. 07, 2015 8:58:22 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
-INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-d’oct. 07, 2015 8:58:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-d’oct. 07, 2015 8:58:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://52.88.128.158:5432/ourtree?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory]
-d’oct. 07, 2015 8:58:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=ourtree, password=****}
-d’oct. 07, 2015 8:58:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-d’oct. 07, 2015 8:58:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-d’oct. 07, 2015 8:58:25 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
-d’oct. 07, 2015 9:01:19 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-d’oct. 07, 2015 9:01:19 PM org.hibernate.type.BasicTypeRegistry register
-INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7f4f74d6
-d’oct. 07, 2015 9:01:21 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-</pre>
-</span>
-</div>
 </div>
 <div id="footer">
-<p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.1</a> at 07/10/2015 21:01:24</p>
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 2.3</a> at 09/10/2015 11:20:44</p>
 </div>
 </div>
 </body>
+</html>
