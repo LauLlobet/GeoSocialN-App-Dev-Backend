@@ -137,7 +137,7 @@
       <file leaf-file-name="DistanceStringComposerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5842217" vertical-offset="26" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.63965887" vertical-offset="0" max-vertical-offset="495">
               <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding />
             </state>
@@ -1307,12 +1307,12 @@
       <workItem from="1435073184691" duration="17850000" />
       <workItem from="1436352265056" duration="3321000" />
       <workItem from="1443867880863" duration="16721000" />
-      <workItem from="1444143516463" duration="33395000" />
+      <workItem from="1444143516463" duration="33842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190418000" />
+    <option name="totallyTimeSpent" value="190865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="22" width="1390" height="875" extended-state="0" />
@@ -1852,7 +1852,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5842217" vertical-offset="26" max-vertical-offset="495">
+        <state vertical-scroll-proportion="0.63965887" vertical-offset="0" max-vertical-offset="495">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding />
         </state>
