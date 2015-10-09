@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2015-10-09T09:20:43" hostname="mbaLau.local" time="0.018">
+<testsuite name="com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2015-10-09T09:51:27" hostname="mbaLau.local" time="0.025">
   <properties/>
-  <testcase name="composeANearPlace" classname="com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest" time="0.016">
+  <testcase name="composeANearPlace" classname="com.tubtale.otbackend.twitterpublisher.DistanceStringComposerTest" time="0.024">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)

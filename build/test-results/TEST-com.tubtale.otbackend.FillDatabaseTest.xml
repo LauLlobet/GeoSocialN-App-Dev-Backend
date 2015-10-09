@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.FillDatabaseTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-10-09T09:20:39" hostname="mbaLau.local" time="0.265">
+<testsuite name="com.tubtale.otbackend.FillDatabaseTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-10-09T09:51:25" hostname="mbaLau.local" time="0.226">
   <properties/>
-  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.FillDatabaseTest" time="0.265">
+  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.FillDatabaseTest" time="0.226">
     <failure message="java.lang.ExceptionInInitializerError" type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
 	at com.tubtale.otbackend.HibernateUtil.&lt;clinit&gt;(HibernateUtil.java:22)
 	at com.tubtale.otbackend.TreeDao.deleteAllTrees(TreeDao.java:24)

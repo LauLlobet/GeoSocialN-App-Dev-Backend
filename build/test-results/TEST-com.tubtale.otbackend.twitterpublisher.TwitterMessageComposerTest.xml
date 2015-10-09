@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" tests="14" skipped="0" failures="14" errors="0" timestamp="2015-10-09T09:20:43" hostname="mbaLau.local" time="0.787">
+<testsuite name="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" tests="14" skipped="0" failures="14" errors="0" timestamp="2015-10-09T09:51:27" hostname="mbaLau.local" time="0.633">
   <properties/>
-  <testcase name="getTextBeforeLockWithALock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.51">
+  <testcase name="getTextBeforeLockWithALock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.392">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -52,7 +52,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBeforeLockWithAbury" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.019">
+  <testcase name="getTextBeforeLockWithAbury" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.013">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -103,7 +103,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBegginingWithSpaceAndLock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.003">
+  <testcase name="getTextBegginingWithSpaceAndLock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.001">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -154,7 +154,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBeforeLockOrBuryWithoutLockOrBuryAndTrim" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.026">
+  <testcase name="getTextBeforeLockOrBuryWithoutLockOrBuryAndTrim" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.023">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -205,7 +205,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getSizesOfDedicatedTextLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.003">
+  <testcase name="getSizesOfDedicatedTextLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.002">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -256,7 +256,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getSizesOfDedicatedTextImpossibleLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.082">
+  <testcase name="getSizesOfDedicatedTextImpossibleLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.065">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.Exception&gt; but was&lt;java.lang.NoClassDefFoundError&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.Exception&gt; but was&lt;java.lang.NoClassDefFoundError&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
@@ -362,7 +362,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBeforeLock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.016">
+  <testcase name="getTextBeforeLock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.013">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -464,7 +464,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getListOfUsersToNotify" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.024">
+  <testcase name="getListOfUsersToNotify" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.018">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -515,7 +515,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getListOfUsersToNotifyOneByOne" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.02">
+  <testcase name="getListOfUsersToNotifyOneByOne" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.023">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -566,7 +566,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getSizesOfDedicatedTextExtremelyLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.047">
+  <testcase name="getSizesOfDedicatedTextExtremelyLongUsername" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.045">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -617,7 +617,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBeforeBuryWithABury" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.01">
+  <testcase name="getTextBeforeBuryWithABury" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.008">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)
@@ -668,7 +668,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.tubtal
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTextBeforeBuryWithALock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.011">
+  <testcase name="getTextBeforeBuryWithALock" classname="com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" time="0.009">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.makeQuery(NearestCityDistanceCalculator.java:29)
 	at com.tubtale.otbackend.twitterpublisher.NearestCityDistanceCalculator.&lt;init&gt;(NearestCityDistanceCalculator.java:22)

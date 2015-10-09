@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.TreeDaoTest" tests="12" skipped="0" failures="12" errors="0" timestamp="2015-10-09T09:20:43" hostname="mbaLau.local" time="0.049">
+<testsuite name="com.tubtale.otbackend.TreeDaoTest" tests="12" skipped="0" failures="12" errors="0" timestamp="2015-10-09T09:51:27" hostname="mbaLau.local" time="0.06">
   <properties/>
-  <testcase name="getOneTreesShouldReturnAllTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="getOneTreesShouldReturnAllTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -195,7 +195,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="deleteTreeShouldReturnNullIfTreeDoesNotExist" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="deleteTreeShouldReturnNullIfTreeDoesNotExist" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -292,7 +292,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getAllTreesShouldReturnsTreesWithText" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="getAllTreesShouldReturnsTreesWithText" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -389,7 +389,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="deleteTreeShouldReturnDeletedTree" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="deleteTreeShouldReturnDeletedTree" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -486,7 +486,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="getTreesShouldReturnNumberOfEmptyTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -874,7 +874,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="shouldBeImpossibleToUpdate" classname="com.tubtale.otbackend.TreeDaoTest" time="0.019">
+  <testcase name="shouldBeImpossibleToUpdate" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -971,7 +971,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="deleteAllTreesShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
+  <testcase name="deleteAllTreesShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -1068,7 +1068,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTreeShouldReturnTreeWithTheSpecifiedId" classname="com.tubtale.otbackend.TreeDaoTest" time="0.001">
+  <testcase name="getTreeShouldReturnTreeWithTheSpecifiedId" classname="com.tubtale.otbackend.TreeDaoTest" time="0.0">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.TreeDaoTest.beforeTreeDaoTest(TreeDaoTest.java:16)
@@ -1166,9 +1166,5 @@
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[oct. 09, 2015 11:20:43 AM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [127.0.0.1:8080]
-oct. 09, 2015 11:20:43 AM org.glassfish.grizzly.nio.GracefulShutdownRunner run
-WARNING: Primary shutdown thread interrupted.  Forcing transport termination.
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

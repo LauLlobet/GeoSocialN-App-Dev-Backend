@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.TreeApiTest" tests="12" skipped="0" failures="12" errors="0" timestamp="2015-10-09T09:20:42" hostname="mbaLau.local" time="0.726">
+<testsuite name="com.tubtale.otbackend.TreeApiTest" tests="12" skipped="0" failures="12" errors="0" timestamp="2015-10-09T09:51:27" hostname="mbaLau.local" time="0.686">
   <properties/>
-  <testcase name="getV1ItemsIdShouldReturnSpecifiedTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.029">
+  <testcase name="getV1ItemsIdShouldReturnSpecifiedTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.026">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.CommonTest.insertTrees(CommonTest.java:33)
@@ -102,7 +102,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getV1ItemsShouldReturnListOfTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.002">
+  <testcase name="getV1ItemsShouldReturnListOfTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.001">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.CommonTest.insertTrees(CommonTest.java:45)
@@ -203,9 +203,9 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="putV1ItemsShouldBePostableAndGettable" classname="com.tubtale.otbackend.TreeApiTest" time="0.393">
-    <failure message="org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')&#10; at [Source: java.io.StringReader@7c0eb30c; line: 1, column: 2]" type="org.codehaus.jackson.JsonParseException">org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
- at [Source: java.io.StringReader@7c0eb30c; line: 1, column: 2]
+  <testcase name="putV1ItemsShouldBePostableAndGettable" classname="com.tubtale.otbackend.TreeApiTest" time="0.387">
+    <failure message="org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')&#10; at [Source: java.io.StringReader@27a60925; line: 1, column: 2]" type="org.codehaus.jackson.JsonParseException">org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+ at [Source: java.io.StringReader@27a60925; line: 1, column: 2]
 	at org.codehaus.jackson.JsonParser._constructError(JsonParser.java:1433)
 	at org.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:521)
 	at org.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:442)
@@ -312,7 +312,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="v1ItemsShouldReturnStatus200" classname="com.tubtale.otbackend.TreeApiTest" time="0.068">
+  <testcase name="v1ItemsShouldReturnStatus200" classname="com.tubtale.otbackend.TreeApiTest" time="0.069">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.deleteAllTrees(TreeDao.java:24)
 	at com.tubtale.otbackend.TreeApiTest.afterUserResourceTest(TreeApiTest.java:41)
@@ -362,9 +362,9 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="putV1ItemsIdShouldSaveNewTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.075">
-    <failure message="org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')&#10; at [Source: java.io.StringReader@542356; line: 1, column: 2]" type="org.codehaus.jackson.JsonParseException">org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
- at [Source: java.io.StringReader@542356; line: 1, column: 2]
+  <testcase name="putV1ItemsIdShouldSaveNewTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.077">
+    <failure message="org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')&#10; at [Source: java.io.StringReader@57afefb7; line: 1, column: 2]" type="org.codehaus.jackson.JsonParseException">org.codehaus.jackson.JsonParseException: Unexpected character ('&lt;' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+ at [Source: java.io.StringReader@57afefb7; line: 1, column: 2]
 	at org.codehaus.jackson.JsonParser._constructError(JsonParser.java:1433)
 	at org.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:521)
 	at org.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:442)
@@ -572,7 +572,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="deleteV1ItemsShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.065">
+  <testcase name="deleteV1ItemsShouldDeleteAllTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.05">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.getAllTrees(TreeDao.java:33)
 	at com.tubtale.otbackend.TreeDao.getAllTrees(TreeDao.java:43)
@@ -673,7 +673,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getV1ItemsShouldReturnTypeApplicationJson" classname="com.tubtale.otbackend.TreeApiTest" time="0.052">
+  <testcase name="getV1ItemsShouldReturnTypeApplicationJson" classname="com.tubtale.otbackend.TreeApiTest" time="0.053">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.deleteAllTrees(TreeDao.java:24)
 	at com.tubtale.otbackend.TreeApiTest.afterUserResourceTest(TreeApiTest.java:41)
@@ -925,7 +925,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="getTreesShouldReturnOrderedTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.024">
+  <testcase name="getTreesShouldReturnOrderedTrees" classname="com.tubtale.otbackend.TreeApiTest" time="0.001">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.CommonTest.insertTrees(CommonTest.java:45)
@@ -1026,7 +1026,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="deleteV1ItemsIdShouldDeleteExistingTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.002">
+  <testcase name="deleteV1ItemsIdShouldDeleteExistingTree" classname="com.tubtale.otbackend.TreeApiTest" time="0.007">
     <failure message="java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class com.tubtale.otbackend.HibernateUtil
 	at com.tubtale.otbackend.TreeDao.save(TreeDao.java:72)
 	at com.tubtale.otbackend.CommonTest.insertTrees(CommonTest.java:33)
@@ -1130,11 +1130,11 @@
   <system-out><![CDATA[ANS:<html><head><title>Grizzly 2.3.8</title><style><!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--></style> </head><body><div class="header">Request failed.</div><div class="body">Request failed.</div><div class="footer">Grizzly 2.3.8</div></body></html>
 deleting ALL trees
 ]]></system-out>
-  <system-err><![CDATA[oct. 09, 2015 11:20:41 AM org.glassfish.jersey.server.ApplicationHandler initialize
+  <system-err><![CDATA[oct. 09, 2015 11:51:26 AM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-oct. 09, 2015 11:20:42 AM org.glassfish.grizzly.http.server.NetworkListener start
+oct. 09, 2015 11:51:27 AM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [127.0.0.1:8080]
-oct. 09, 2015 11:20:42 AM org.glassfish.grizzly.http.server.HttpServer start
+oct. 09, 2015 11:51:27 AM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer] Started.
 java.lang.NullPointerException
 	at java.io.StringReader.<init>(StringReader.java:50)
@@ -1198,5 +1198,7 @@ java.lang.NullPointerException
 	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
 	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
 	at java.lang.Thread.run(Thread.java:745)
+oct. 09, 2015 11:51:27 AM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
+INFO: Stopped listener bound to [127.0.0.1:8080]
 ]]></system-err>
 </testsuite>

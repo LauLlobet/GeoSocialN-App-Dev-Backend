@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tubtale.otbackend.TreeTest" tests="11" skipped="0" failures="9" errors="0" timestamp="2015-10-09T09:20:43" hostname="mbaLau.local" time="0.028">
+<testsuite name="com.tubtale.otbackend.TreeTest" tests="11" skipped="0" failures="9" errors="0" timestamp="2015-10-09T09:51:27" hostname="mbaLau.local" time="0.037">
   <properties/>
-  <testcase name="equalsShouldFailIfIpIsNotTheSameAgainstVal" classname="com.tubtale.otbackend.TreeTest" time="0.009">
+  <testcase name="equalsShouldFailIfIpIsNotTheSameAgainstVal" classname="com.tubtale.otbackend.TreeTest" time="0.029">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -113,8 +113,8 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="sqlTimestampTest" classname="com.tubtale.otbackend.TreeTest" time="0.001"/>
-  <testcase name="equalsShouldFailIfTimestampIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.001">
+  <testcase name="sqlTimestampTest" classname="com.tubtale.otbackend.TreeTest" time="0.0"/>
+  <testcase name="equalsShouldFailIfTimestampIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -226,7 +226,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="equalsShouldFailIfIpIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.001">
+  <testcase name="equalsShouldFailIfIpIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -282,7 +282,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="equalShouldReturnTrueIfAllIsEqual" classname="com.tubtale.otbackend.TreeTest" time="0.001">
+  <testcase name="equalShouldReturnTrueIfAllIsEqual" classname="com.tubtale.otbackend.TreeTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -337,7 +337,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="equalsShouldFailIfTimestampIsNotTheSameAgainstVal" classname="com.tubtale.otbackend.TreeTest" time="0.001">
+  <testcase name="equalsShouldFailIfTimestampIsNotTheSameAgainstVal" classname="com.tubtale.otbackend.TreeTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -393,7 +393,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="equalsShouldFailIfTextIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.0">
+  <testcase name="equalsShouldFailIfTextIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.001">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
@@ -450,7 +450,7 @@
 </failure>
   </testcase>
   <testcase name="textShouldHaveSetterAndGetter" classname="com.tubtale.otbackend.TreeTest" time="0.0"/>
-  <testcase name="equalsShouldReturnFalseIfMetersToHideIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.002">
+  <testcase name="equalsShouldReturnFalseIfMetersToHideIsNotTheSameAgainstDefault" classname="com.tubtale.otbackend.TreeTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at com.tubtale.otbackend.Tree.equals(Tree.java:93)
 	at org.hamcrest.core.IsEqual.areEqual(IsEqual.java:43)
