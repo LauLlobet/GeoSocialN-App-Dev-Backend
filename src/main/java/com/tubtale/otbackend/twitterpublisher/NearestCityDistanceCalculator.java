@@ -30,9 +30,9 @@ public class NearestCityDistanceCalculator {
         List<Map<String,Object>> result;
         Query query = session.createSQLQuery(
                 "SELECT cityName, centerMonument," +
-                        " ST_distance_sphere(location,ST_GeomFromText('POINT("+longitude+" "+latitude+")', 4326)) as distanceInMeters"+
+                        " ST_distance_sphere(location,ST_GeomFromText('POINT("+latitude+" "+longitude+")', 4326)) as distanceInMeters"+
                         " FROM Cities"+
-                        " ORDER BY location <-> st_setsrid(st_makepoint("+longitude+","+latitude+"),4326)"+
+                        " ORDER BY location <-> st_setsrid(st_makepoint("+latitude+","+longitude+"),4326)"+
                         " LIMIT 1;"
         );
         query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);

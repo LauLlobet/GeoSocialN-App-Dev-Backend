@@ -19,7 +19,7 @@ public class TwitterMessageComposerTest {
     float lon = 1;
     float lat = 2;
     int treeId = 123456;
-
+/*
     @Test
     public void getListOfUsersToNotify() {
 
@@ -102,7 +102,17 @@ public class TwitterMessageComposerTest {
         TwitterMessageComposer composer = new TwitterMessageComposer(text,lon,lat,treeId);
         assertThat(composer.getTextbeforeLockOrBury(),is(equalTo("")));
     }
-
+*/
+    @Test
+    public void getSizesOfDedicatedTextNormalUsername() throws Exception {
+        lon = 2.1880345344543457f;
+        lat = 41.38018798828125f;                                                     //Hola peña este mensaje es para decirte que aqui hay rovellones us
+        String text = "Hola peña este mensaje es para decirte que aqui hay rovellones @user1 hola @user2 coco @user3";
+        TwitterMessageComposer composer = new TwitterMessageComposer(text,lon,lat,treeId);
+        assertThat("@user1 a 21Km de Girona te han escrito un mensaje secreto, descubrelo:www.wiressly.com/123456",
+                is(equalTo(composer.getTweets().get(0))));
+    }
+/*
     @Test
     public void getSizesOfDedicatedTextLongUsername() throws Exception {
         lon=  41.8109004f;
@@ -123,13 +133,6 @@ public class TwitterMessageComposerTest {
                 is(equalTo(composer.getTweets().get(0))));
     }
 
-    @Test(expected=Exception.class)
-    public void getSizesOfDedicatedTextImpossibleLongUsername() throws Exception {
-        lon=  41.8109004f;
-        lat = 2.743285799999967f; //  "Expected :@user1 a 21Km de Girona te han escrito:\"Hola peña este mensaje es para decirte que aqui hay rovellones us\" descubrelo:www.wiressly.com/123456",
-        String text =                " @user1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa hola ";
-        TwitterMessageComposer composer = new TwitterMessageComposer(text,lon,lat,treeId);
-        assertThat("@user1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa www.wiressly.com/123456",
-                is(equalTo(composer.getTweets().get(0))));
-    }
+*/
+
 }

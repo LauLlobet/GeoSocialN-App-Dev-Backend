@@ -20,6 +20,7 @@ public class TreeToTwitterPublisher {
             for( String s: tweets){
                 try{
                     twitterStringPublisher.publishTweet(s);
+                    System.out.println("[OTLOG] tweet done:"+treeId);
                 }catch (Exception e){
                     System.out.println("[OTLOG] impossible to tweet tree:"+treeId);
                     e.printStackTrace();
