@@ -101,8 +101,21 @@ public class TwitterMessageComposerTest {
         String text = " * hola hola @user1*bury hola @user2 *bury coco @user3";
         TwitterMessageComposer composer = new TwitterMessageComposer(text,lon,lat,treeId);
         assertThat(composer.getTextbeforeLockOrBury(),is(equalTo("")));
+    }*/
+
+    @Test
+    public void getTextBoldAndSubstringed() {
+        String text = "abcdefghijklmnopqrst";
+        TwitterMessageComposer composer = new TwitterMessageComposer(text,lon,lat,treeId);
+        assertThat(composer.getTextbeforeLockOrBuryAndBoldAndSubstring(10),is(equalTo("\uD835\uDC1A\uD835\uDC1B\uD835\uDC1C\uD835\uDC1D\uD835\uDC1E\uD835\uDC1F\uD835\uDC20\uD835\uDC21\uD835\uDC22\uD835\uDC23")));
+
+        text = "abcdefghijklmnopqrst";
+        composer = new TwitterMessageComposer(text,lon,lat,treeId);
+        assertThat(composer.getTextbeforeLockOrBuryAndBoldAndSubstring(11),is(equalTo("\uD835\uDC1A\uD835\uDC1B\uD835\uDC1C\uD835\uDC1D\uD835\uDC1E\uD835\uDC1F\uD835\uDC20\uD835\uDC21\uD835\uDC22\uD835\uDC23\uD835\uDC24")));
     }
-*/
+
+
+/*
     @Test
     public void getSizesOfDedicatedTextNormalUsername() throws Exception {
         lon = 2.1880345344543457f;
@@ -112,7 +125,7 @@ public class TwitterMessageComposerTest {
         assertThat("@user1 a 21Km de Girona te han escrito un mensaje secreto, descubrelo:www.wiressly.com/123456",
                 is(equalTo(composer.getTweets().get(0))));
     }
-/*
+
     @Test
     public void getSizesOfDedicatedTextLongUsername() throws Exception {
         lon=  41.8109004f;

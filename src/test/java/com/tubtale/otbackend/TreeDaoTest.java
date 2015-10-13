@@ -57,6 +57,15 @@ public class TreeDaoTest extends CommonTest {
     }
 
     @Test
+    public void getUnstoredIdShouldReturnTreeWithTheSpecifiedId() {
+        int size = 12;
+        List<Tree> list= insertTrees(size);
+        Tree actual = treeDao.getTree(list.get(5).getId());
+        assertThat(actual.getId(), is(equalTo(list.get(5).getId())));
+        assertThat(actual.getText(), is(equalTo(tree.getText())));
+    }
+
+    @Test
     public void getTreeShouldReturnNullIfIdDoesNotExist() {
         Tree actual = treeDao.getTree(123);
         assertThat(actual, is(nullValue()));
@@ -75,19 +84,6 @@ public class TreeDaoTest extends CommonTest {
         assertThat(fetched, is(equalTo(newTree)));
         assertThat(fetched.getX(), is(newTree.getX()));
         assertThat(fetched.getX(), is((double)32));
-    }
-
-    @Test
-    public void shouldBeImpossibleToUpdate() {
-        Tree newTree = new Tree();
-        newTree.setText("bbb");
-        treeDao.save(newTree);
-        newTree.setText("aaa");
-        treeDao.save(newTree);
-        String dbtext = treeDao.getTree(newTree.getId()).getText();
-        System.out.println("dbtext:"+ dbtext);
-        System.out.println("newtext: aaaa");
-        assertThat(dbtext, is(not(equalTo("aaa"))));
     }
 
     @Test

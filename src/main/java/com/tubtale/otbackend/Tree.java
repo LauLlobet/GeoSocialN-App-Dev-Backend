@@ -4,6 +4,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -125,6 +126,18 @@ public class Tree {
 
     public void setY(float y){
         setLocation(location.getX(),y);
+    }
+
+
+    public Tree obtainDuplicate(){
+        try {
+            String treeString = new ObjectMapper().writeValueAsString(this);
+            Tree ans = new ObjectMapper().readValue(treeString, Tree.class);
+            return ans;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 

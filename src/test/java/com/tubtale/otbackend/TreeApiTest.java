@@ -46,7 +46,7 @@ public class TreeApiTest  extends CommonTest {
         server.shutdown();
     }
 
-    @Test
+/*    @Test
     public void v1ItemsShouldReturnStatus200() {
         assertThat(itemsTarget.request().head().getStatus(), is(200));
     }
@@ -123,7 +123,119 @@ public class TreeApiTest  extends CommonTest {
         assertThat(actual, is(equalTo(tree)));
         assertThat(treeDao.getAllTrees().size(), is(1));
     }
+*/
+    @Test
+    public void putV1ItemsWithAnIdIfATreeThatDoesentExistShouldReturnNull() throws Exception {
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        tree.setId(putAnsTree.getId());
+        tree.setTimestamp(putAnsTree.getTimestamp());
+        Tree actual = treeDao.getTree(putAnsTree.getId());
 
+        actual.setId(123);
+        String json2 = new ObjectMapper().writeValueAsString(actual);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        r = itemsTarget.request().put(Entity.text(json2));
+        String jsonans2 = r.readEntity(String.class);
+
+        assertThat(extractTreeListContentOfAGetOrPut(jsonans2), is(nullValue()));
+    }
+
+    @Test
+    public void putV1ItemsTheSameAsAStoredOneShouldReturnTheStoredOne() throws Exception {
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        String json2 = new ObjectMapper().writeValueAsString(putAnsTree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r2 = itemsTarget.request().put(Entity.text(json2));
+        String jsonans2 = r2.readEntity(String.class);
+        Tree putAnsTree2 = extractTreeContentOfAGetOrPut(jsonans2);
+
+        assertThat(putAnsTree2, is(not(nullValue())));
+        assertThat(putAnsTree2, is(equalTo(putAnsTree)));
+        assertThat(treeDao.getAllTrees().size(), is(1));
+    }
+
+
+    @Test
+    public void putV1ItemsTheSameAsAStoredWithMetersToHideIncreasedBy3ShouldreturnNull() throws Exception {
+        int inc = 2;
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        putAnsTree.setMetersToHide(putAnsTree.getMetersToHide() + inc);
+        String json2 = new ObjectMapper().writeValueAsString(putAnsTree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r2 = itemsTarget.request().put(Entity.text(json2));
+        String jsonans2 = r2.readEntity(String.class);
+        Tree putAnsTree2 = extractTreeContentOfAGetOrPut(jsonans2);
+
+        assertThat(putAnsTree2, is(nullValue()));
+    }
+
+    @Test
+    public void putV1ItemsTheSameAsAStoredWithMetersToHideIncreasedBy1ShouldreturnNotNull() throws Exception {
+        int inc = 1;
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        Tree expected = putAnsTree.obtainDuplicate();
+
+        putAnsTree.setMetersToHide(putAnsTree.getMetersToHide() + inc);
+        putAnsTree.setText("this text shouldnt be updated");
+
+        String json2 = new ObjectMapper().writeValueAsString(putAnsTree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r2 = itemsTarget.request().put(Entity.text(json2));
+        String jsonans2 = r2.readEntity(String.class);
+        Tree updateAnsTree = extractTreeContentOfAGetOrPut(jsonans2);
+
+        expected.setMetersToHide(expected.getMetersToHide()+inc);
+        assertThat(updateAnsTree, is(not(nullValue())));
+        assertThat(updateAnsTree, is(equalTo(expected)));
+    }
+/*
+
+@Test
+    public void putV1ItemsWithAnAlreadySavedTreeWithSameMetersToHideShouldReturnNull() throws Exception {
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        tree.setId(putAnsTree.getId());
+        tree.setTimestamp(putAnsTree.getTimestamp());
+        Tree actual = treeDao.getTree(putAnsTree.getId());
+
+
+        String json2 = new ObjectMapper().writeValueAsString(actual);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        r = itemsTarget.request().put(Entity.text(json2));
+        String jsonans2 = r.readEntity(String.class);
+
+        assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonans2), is(0));
+        assertThat(extractTreeListContentOfAGetOrPut(jsonans2), is(nullValue()));
+    }
     @Test
     public void putV1ItemsShouldBePostableAndGettable() throws Exception {
         tree.setText("This is new title");
@@ -212,7 +324,7 @@ public class TreeApiTest  extends CommonTest {
         assertThat(extractTreeListContentOfAGetOrPut(jsonAnswer), is(nullValue()));
 
     }
-
+*/
     public Tree extractTreeContentOfAGetOrPut(String restAns) throws  Exception{
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(new StringReader(restAns));

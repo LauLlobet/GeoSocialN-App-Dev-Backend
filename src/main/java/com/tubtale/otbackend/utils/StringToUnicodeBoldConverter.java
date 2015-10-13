@@ -6,11 +6,16 @@ public class StringToUnicodeBoldConverter {
     private static String lowerCase = "SMALL";
     private static String upperCase = "CAPITAL";
 
-    public static String convertString(String request) {
+    public static String convertString(String request, int charactersToSubstring) {
         String ans = "";
+        int i = 1;
         char[] requestArray = request.toCharArray();
         for (char ch: requestArray) {
             ans += convertASingleCharOrLeaveItAsIsIfUnknown(ch);
+            if( i >= charactersToSubstring ) {
+                return ans;
+            }
+            i++;
         }
         return ans;
     }

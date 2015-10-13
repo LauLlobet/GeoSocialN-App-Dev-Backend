@@ -78,6 +78,9 @@ public class TreeApi {
         float y = (float)tree.getY();
 
         int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
+        if( isAnAlreadySavedTree(tree) ){
+            return handleUpdateTree(tree,emptyTrees);
+        }
         if( emptyTrees == 0 ){
             return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;
         }
@@ -89,6 +92,36 @@ public class TreeApi {
         TreeDao.getInstance().save(tree);
         treeToTweeterPublisher.publishTreeInTwitterUsersMentioned(tree.getText(),x,y,tree.getId());
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
+    }
+
+    private String handleUpdateTree(Tree tree, int emptyTrees) {
+        Tree previouslySavedOne = TreeDao.getInstance().getTree(tree.getId());
+        if( previouslySavedOne == null){
+            return "{ \"treeContent\":null,\"emptyTrees\":"+emptyTrees+"}";
+        }
+        try {
+
+            if( previouslySavedOne.getMetersToHide()+1 == tree.getMetersToHide() ||
+                    previouslySavedOne.getMetersToHide()-1 == tree.getMetersToHide() ||
+                    previouslySavedOne.getMetersToHide() == tree.getMetersToHide() ) {
+                previouslySavedOne.setMetersToHide(tree.getMetersToHide());
+                TreeDao.getInstance().save(previouslySavedOne);
+                return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(previouslySavedOne) +",\"emptyTrees\":"+emptyTrees+"}" ;
+            } else {
+                return "{ \"treeContent\":null,\"emptyTrees\":"+emptyTrees+"}";
+            }
+        } catch (Exception e) {
+            return "{ \"treeContent\":null,\"emptyTrees\":"+emptyTrees+"}";
+        }
+    }
+
+    private boolean isAnAlreadySavedTree(Tree tree) {
+        if (tree.getId() == null) {
+            return false;
+        }else{
+            return true;
+        }
+
     }
 
     @DELETE

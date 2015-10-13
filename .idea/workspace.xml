@@ -28,38 +28,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TwitterMessageComposer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TwitterMessageComposer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5072464" vertical-offset="515" max-vertical-offset="1530">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state vertical-scroll-proportion="-4.3703704" vertical-offset="722" max-vertical-offset="1650">
+              <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
               <folding>
-                <element signature="e#1023#1031#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1932#1933#0" expanded="true" />
-                <element signature="e#1975#1976#0" expanded="true" />
-                <element signature="e#2087#2095#0" expanded="true" />
+                <element signature="e#979#987#0" expanded="true" />
+                <element signature="e#1293#1294#0" expanded="true" />
+                <element signature="e#1329#1330#0" expanded="true" />
+                <element signature="e#1888#1889#0" expanded="true" />
+                <element signature="e#1931#1932#0" expanded="true" />
+                <element signature="e#2418#2426#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java">
+      <file leaf-file-name="StringToUnicodeBoldConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1695">
-              <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <file leaf-file-name="StringToUnicodeBoldConverterTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.76" vertical-offset="21" max-vertical-offset="465">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="765">
+              <caret line="46" column="94" selection-start-line="46" selection-start-column="94" selection-end-line="46" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <file leaf-file-name="TwitterMessageComposerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2160">
-              <caret line="110" column="65" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2355">
+              <caret line="113" column="219" selection-start-line="113" selection-start-column="219" selection-end-line="113" selection-end-column="219" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,11 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeToTwitterPublisher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TreeToTwitterPublisher.java">
+      <file leaf-file-name="TreeApiTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="615">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.036516853" vertical-offset="2657" max-vertical-offset="5085">
+              <caret line="196" column="47" selection-start-line="196" selection-start-column="47" selection-end-line="196" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1357" max-vertical-offset="1875">
+              <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -90,18 +100,8 @@
       <file leaf-file-name="TwitterStringPublisher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterStringPublisher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="465">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeApiTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2737" max-vertical-offset="3375">
-              <caret line="225" column="56" selection-start-line="225" selection-start-column="45" selection-end-line="225" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
       <file leaf-file-name="TreeApi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665" vertical-offset="1155" max-vertical-offset="1605">
-              <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
+            <state vertical-scroll-proportion="-6.5185184" vertical-offset="1459" max-vertical-offset="2100">
+              <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#702#703#0" expanded="true" />
@@ -121,25 +121,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DistanceStringComposer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java">
+      <file leaf-file-name="TreeDaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state vertical-scroll-proportion="-5.296296" vertical-offset="532" max-vertical-offset="1710">
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NearestCityDistanceCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/NearestCityDistanceCalculator.java">
+      <file leaf-file-name="TreeDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="601" max-vertical-offset="885">
-              <caret line="34" column="96" selection-start-line="34" selection-start-column="96" selection-end-line="34" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="1380">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1444410121000" expanded="true" signature="1131:1428" placeholder="SELECT cityN..Cities..." />
-                <marker date="1444410121000" expanded="true" signature="1131:1484" placeholder="SELECT cityN..Cities..." />
+                <marker date="1444730118000" expanded="true" signature="925:1086" placeholder="SELECT * FRO..Tree..." />
+                <marker date="1444730118000" expanded="true" signature="1618:1863" placeholder="SELECT COUNT..Tree..." />
               </folding>
             </state>
           </provider>
@@ -161,7 +160,7 @@
             <ExternalSystemSettings>
               <option name="externalProjectPath" value="$PROJECT_DIR$" />
               <option name="externalSystemIdString" value="GRADLE" />
-              <option name="scriptParameters" value="--tests com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" />
+              <option name="scriptParameters" value="--tests com.tubtale.otbackend.TreeApiTest" />
               <option name="taskNames">
                 <list>
                   <option value="cleanTest" />
@@ -565,21 +564,15 @@
         <option value="$PROJECT_DIR$/src/test/java/OtbeApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/OtbeApplication.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/FillDatabaseTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeTest.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TwitterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/PublishString.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/StaticStrings.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/AtMessageComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/StaticStrings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/AtMessageComposerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/PublishingCityDistanceCalculatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/PublishingCityDistanceCalculator.java" />
@@ -588,12 +581,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterStringPublisher.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/sqlhistory.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TreeToTwitterPublisher.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/NearestCityDistanceCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/DistanceStringComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java" />
       </list>
     </option>
   </component>
@@ -601,10 +600,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="165" />
-    <option name="y" value="128" />
+    <option name="x" value="50" />
+    <option name="y" value="22" />
     <option name="width" value="1390" />
-    <option name="height" value="690" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -677,6 +676,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="otbackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="otjavabackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="otjavabackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="otbackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -848,28 +877,7 @@
       <recent name="com.tubtale.otbackend.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TwitterMessageComposerTest">
-    <configuration default="false" name="StringToUnicodeBoldConverterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests com.tubtale.otbackend.utils.StringToUnicodeBoldConverterTest" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="cleanTest" />
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
-      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Gradle.TreeApiTest">
     <configuration default="false" name="AtMessageComposerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -945,6 +953,27 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests com.tubtale.otbackend.twitterpublisher.TwitterMessageComposerTest" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="cleanTest" />
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TreeApiTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests com.tubtale.otbackend.TreeApiTest" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -1213,19 +1242,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gradle.StringToUnicodeBoldConverterTest" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.AtMessageComposerTest" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.PublishingCityDistanceCalculatorTest" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.DistanceStringComposerTest" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.TwitterMessageComposerTest" />
+      <item index="0" class="java.lang.String" itemvalue="Gradle.AtMessageComposerTest" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.PublishingCityDistanceCalculatorTest" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.DistanceStringComposerTest" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.TwitterMessageComposerTest" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.TreeApiTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.TwitterMessageComposerTest" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.DistanceStringComposerTest" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.PublishingCityDistanceCalculatorTest" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.AtMessageComposerTest" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.StringToUnicodeBoldConverterTest" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.TreeApiTest" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.TwitterMessageComposerTest" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.DistanceStringComposerTest" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.PublishingCityDistanceCalculatorTest" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.AtMessageComposerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1249,16 +1278,16 @@
       <workItem from="1435073184691" duration="17850000" />
       <workItem from="1436352265056" duration="3321000" />
       <workItem from="1443867880863" duration="16721000" />
-      <workItem from="1444143516463" duration="44511000" />
+      <workItem from="1444143516463" duration="54502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201534000" />
+    <option name="totallyTimeSpent" value="211525000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="165" y="128" width="1390" height="690" extended-state="0" />
-    <editor active="true" />
+    <frame x="50" y="22" width="1390" height="878" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1276,13 +1305,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15971223" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107914" sideWeight="0.49887133" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47563025" sideWeight="0.86388886" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107914" sideWeight="0.49887133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47509578" sideWeight="0.86388886" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3277311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24904214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39938557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1315,7 +1344,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1357,8 +1394,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1230">
           <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
           <folding>
-            <marker date="1435247641000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Tree..." />
-            <marker date="1435247641000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Tree..." />
+            <marker date="1444730118000" expanded="true" signature="925:1086" placeholder="SELECT * FRO..Tree..." />
+            <marker date="1444730118000" expanded="true" signature="1618:1863" placeholder="SELECT COUNT..Tree..." />
           </folding>
         </state>
       </provider>
@@ -1469,20 +1506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="1800">
-          <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#425#426#0" expanded="false" />
-            <element signature="e#465#466#0" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-            <element signature="e#600#601#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0/6800b5f794beb9809d8fef83d21e157b0db6ee19/javax.ws.rs-api-2.0-sources.jar!/javax/ws/rs/client/SyncInvoker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="7050">
@@ -1571,17 +1594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1410">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <marker date="1435247641000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Tree..." />
-            <marker date="1435247641000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Tree..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.0.0.CR1/8aa0a60a1beb6417888b46ece0781891133e9b48/hibernate-core-5.0.0.CR1-sources.jar!/org/hibernate/SQLQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2204" max-vertical-offset="4905">
@@ -1602,22 +1614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1699,64 +1695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2737" max-vertical-offset="3375">
-          <caret line="225" column="56" selection-start-line="225" selection-start-column="45" selection-end-line="225" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterStringPublisher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="465">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2160">
-          <caret line="110" column="65" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.76" vertical-offset="21" max-vertical-offset="465">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1695">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="1155" max-vertical-offset="1605">
-          <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TreeToTwitterPublisher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="615">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1767,8 +1709,8 @@
           <caret line="34" column="96" selection-start-line="34" selection-start-column="96" selection-end-line="34" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1444410121000" expanded="true" signature="1131:1428" placeholder="SELECT cityN..Cities..." />
-            <marker date="1444410121000" expanded="true" signature="1131:1484" placeholder="SELECT cityN..Cities..." />
+            <marker date="1444410121000" expanded="true" signature="-1:-1" placeholder="SELECT cityN..Cities..." />
+            <marker date="1444410121000" expanded="true" signature="-1:-1" placeholder="SELECT cityN..Cities..." />
           </folding>
         </state>
       </provider>
@@ -1781,18 +1723,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TreeToTwitterPublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="615">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterStringPublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="465">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5072464" vertical-offset="515" max-vertical-offset="1530">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state vertical-scroll-proportion="-4.3703704" vertical-offset="722" max-vertical-offset="1650">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
           <folding>
-            <element signature="e#1023#1031#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#1975#1976#0" expanded="true" />
-            <element signature="e#2087#2095#0" expanded="true" />
+            <element signature="e#979#987#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1888#1889#0" expanded="true" />
+            <element signature="e#1931#1932#0" expanded="true" />
+            <element signature="e#2418#2426#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/utils/StringToUnicodeBoldConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="765">
+          <caret line="46" column="94" selection-start-line="46" selection-start-column="94" selection-end-line="46" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/twitterpublisher/TwitterMessageComposerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2355">
+          <caret line="113" column="219" selection-start-line="113" selection-start-column="219" selection-end-line="113" selection-end-column="219" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="1380">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <folding>
+            <marker date="1444730118000" expanded="true" signature="925:1086" placeholder="SELECT * FRO..Tree..." />
+            <marker date="1444730118000" expanded="true" signature="1618:1863" placeholder="SELECT COUNT..Tree..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.296296" vertical-offset="532" max-vertical-offset="1710">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/TreeApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5185184" vertical-offset="1459" max-vertical-offset="2100">
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tubtale/otbackend/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1357" max-vertical-offset="1875">
+          <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/tubtale/otbackend/TreeApiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036516853" vertical-offset="2657" max-vertical-offset="5085">
+          <caret line="196" column="47" selection-start-line="196" selection-start-column="47" selection-end-line="196" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

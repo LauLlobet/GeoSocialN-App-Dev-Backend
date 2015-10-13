@@ -16,7 +16,7 @@ public class TwitterMessageComposer {
 
     public TwitterMessageComposer(String text, float longitude, float latitude, int treeId){
         usersToNotify = this.findUsersInText(text);
-        textBeforeLockOrBury = StringToUnicodeBoldConverter.convertString(this.findTextbeforeLockOrBury(text));
+        textBeforeLockOrBury = this.findTextbeforeLockOrBury(text);
         DistanceStringComposer distanceStringComposer = new DistanceStringComposer(longitude,latitude);
         distanceString = distanceStringComposer.toString();
         this.treeId = treeId;
@@ -54,6 +54,16 @@ public class TwitterMessageComposer {
         return textBeforeLockOrBury;
     }
 
+    public void formatTextToBoldAndSubstring(int characters) {
+        textBeforeLockOrBury =  StringToUnicodeBoldConverter.convertString(textBeforeLockOrBury,characters);
+    }
+
+    public String getTextbeforeLockOrBuryAndBoldAndSubstring(int charactersToSubstring) {
+        formatTextToBoldAndSubstring(charactersToSubstring);
+        return textBeforeLockOrBury;
+    }
+
+
     public ArrayList<String> getTweets() throws Exception {
         ArrayList<String > tweets = new ArrayList<String>();
         ArrayList<String> users = this.getUsersToNotify();
@@ -82,9 +92,7 @@ public class TwitterMessageComposer {
                 pt7.length();
         int restOfCharactersAvaliable = maxLengthTweet - forcedCharNumbers;
         if(!( restOfCharactersAvaliable <= 10 || textBeforeLockOrBury.length() == 0)) {
-            String trimmedTextBeforeLockOrBury = "\""+textBeforeLockOrBury+"\"";
-            if(textBeforeLockOrBury.length() > restOfCharactersAvaliable )
-                trimmedTextBeforeLockOrBury = "\""+textBeforeLockOrBury.substring(0,restOfCharactersAvaliable)+" \"";
+            String trimmedTextBeforeLockOrBury = "\""+getTextbeforeLockOrBuryAndBoldAndSubstring(restOfCharactersAvaliable)+" \"";
             return pt0 + pt1 + pt2 + pt3 + pt4 + trimmedTextBeforeLockOrBury + pt6 + pt7 + pt8ItsLengthnotCounts;
         }
         String firstAlternativeMessage = pt0 + pt1 + pt2 + pt3 + " un mensaje secreto, " + pt7 + pt8ItsLengthnotCounts;

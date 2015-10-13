@@ -37,13 +37,13 @@ public class StringToUnicodeBoldConverterTest {
     public void convertStringWithLowerAndUpperCases() {
         String request = "Hola John Doe";
         String ans = "\uD835\uDC07\uD835\uDC28\uD835\uDC25\uD835\uDC1A \uD835\uDC09\uD835\uDC28\uD835\uDC21\uD835\uDC27 \uD835\uDC03\uD835\uDC28\uD835\uDC1E";
-        assertThat(ans, is(equalTo(StringToUnicodeBoldConverter.convertString(request))));
+        assertThat(ans, is(equalTo(StringToUnicodeBoldConverter.convertString(request, request.length()))));
     }
 
     @Test
     public void convertStringWithLowerAndUpperCasesAndStrangeCharacters() {
         String request = "Hola John Doe;!!";
         String ans = "\uD835\uDC07\uD835\uDC28\uD835\uDC25\uD835\uDC1A \uD835\uDC09\uD835\uDC28\uD835\uDC21\uD835\uDC27 \uD835\uDC03\uD835\uDC28\uD835\uDC1E;!!";
-        assertThat(ans, is(equalTo(StringToUnicodeBoldConverter.convertString(request))));
+        assertThat(ans, is(equalTo(StringToUnicodeBoldConverter.convertString(request, request.length()))));
     }
 }

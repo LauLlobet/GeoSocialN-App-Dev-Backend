@@ -67,8 +67,6 @@ public class TreeDao {
     }
 
     public void save(Tree tree) {
-        if(tree.getId() != null)
-            return;
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         session.saveOrUpdate(tree);
