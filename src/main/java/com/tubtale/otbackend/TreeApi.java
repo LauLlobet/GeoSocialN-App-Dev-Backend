@@ -88,6 +88,7 @@ public class TreeApi {
             String address = request.getRemoteAddr();
             tree.setIp(address);
         }
+        tree.setMetersToHide(0);
         tree.setTimestamp(new Timestamp(System.currentTimeMillis()));
         TreeDao.getInstance().save(tree);
         treeToTweeterPublisher.publishTreeInTwitterUsersMentioned(tree.getText(),x,y,tree.getId());
