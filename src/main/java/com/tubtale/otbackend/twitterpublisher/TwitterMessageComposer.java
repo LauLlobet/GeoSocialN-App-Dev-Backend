@@ -81,7 +81,7 @@ public class TwitterMessageComposer {
         String pt4 = ":";
         String pt6 = " ";
         String pt7 = "descubrelo:";
-        String pt8ItsLengthnotCounts = "www.wiressly.com/"+treeId;
+        String pt8ItsLengthnotCounts = "www.wiressly.com/VisitTreeNumber/#"+treeId;
 
         int forcedCharNumbers = pt0.length() +
                 pt1.length() +
@@ -89,7 +89,9 @@ public class TwitterMessageComposer {
                 pt3.length() +
                 pt4.length() +
                 pt6.length() +
-                pt7.length();
+                pt7.length() +
+                pt8ItsLengthnotCounts.length();
+
         int restOfCharactersAvaliable = maxLengthTweet - forcedCharNumbers;
         if(!( restOfCharactersAvaliable <= 10 || textBeforeLockOrBury.length() == 0)) {
             String trimmedTextBeforeLockOrBury = "\""+getTextbeforeLockOrBuryAndBoldAndSubstring(restOfCharactersAvaliable)+" \"";

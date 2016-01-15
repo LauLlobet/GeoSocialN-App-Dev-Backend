@@ -46,84 +46,48 @@ public class TreeApiTest  extends CommonTest {
         server.shutdown();
     }
 
-/*    @Test
-    public void v1ItemsShouldReturnStatus200() {
-        assertThat(itemsTarget.request().head().getStatus(), is(200));
+    public Tree extractTreeContentOfAGetOrPut(String restAns) throws  Exception{
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
+        JsonNode contentNode = rootNode.get("treeContent");
+        return new ObjectMapper().readValue(contentNode, Tree.class);
     }
 
-    @Test
-    public void getV1ItemsShouldReturnTypeApplicationJson() {
-        assertThat(itemsTarget.request().get().getMediaType().toString(), is("application/json"));
-    }
-
-    @Test
-    public void getV1ItemsShouldReturnListOfTrees() throws Exception {
-        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
-        double[] y = { 0,0,0,0,0,0,0,0,0};
-        String[] m = { "3","1","2","6","4","5","7","8","9"};
-        insertTrees(9,x,y,m);
-        itemsTarget = itemsTarget.queryParam("dontInclude","[]");
-        String json = itemsTarget.request().get(String.class);
-        List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
-        assertThat(actual.size(), is(7));
-    }
-
-
-    @Test
-    public void getV1ItemsShouldReturnListOfTreesWithoutExceptionsFromTheList() throws Exception {
-        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
-        double[] y = { 0,0,0,0,0,0,0,0,0};
-        String[] m = { "0","1","2","3","4","5","6","7","8"};
-        List<Tree> list = insertTrees(9,x,y,m);
-
-        String exceptions = "["+list.get(1).getId()+","+list.get(3).getId()+","+list.get(5).getId()+"]";
-        itemsTarget = itemsTarget.queryParam("dontInclude",exceptions);
-        itemsTarget = itemsTarget.queryParam("x",1.1);
-        itemsTarget = itemsTarget.queryParam("y",0);
-        String json = itemsTarget.request().get(String.class);
-        List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
-        String receivedOrder ="";
-        for(Tree t: actual){
-            receivedOrder+=t.getText();
+    public List<Tree> extractTreeListContentOfAGetOrPut(String restAns) throws  Exception{
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
+        JsonNode contentNode = rootNode.get("treeContent");
+        if(contentNode.isNull()){
+            return null;
         }
-        String expectedOrder = "024678";
+        return new ObjectMapper().readValue(contentNode,  objectMapper.getTypeFactory().constructCollectionType(List.class, Tree.class));
+    }
 
-        assertThat(receivedOrder, is(equalTo(expectedOrder)));
-
+    public Integer extractEmptyTreesCountContentOfAGetOrPut(String restAns) throws  Exception{
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
+        JsonNode contentNode = rootNode.get("emptyTrees");
+        return new ObjectMapper().readValue(contentNode,Integer.class);
     }
 
     @Test
-    public void deleteV1ItemsShouldDeleteAllTrees() {
-        itemsTarget.request().delete();
-        assertThat(treeDao.getAllTrees().size(), is(0));
-    }
-
-    @Test
-    public void getV1ItemsIdShouldReturnSpecifiedTree() throws Exception {
-        Tree expected = insertTrees(1).get(0);
-        itemsTarget = itemsTarget.queryParam("x", 2);
-        itemsTarget = itemsTarget.queryParam("y",2);
-        String json = itemsTarget.path("/" + expected.getId()).request().get(String.class);
-        Tree actual = extractTreeContentOfAGetOrPut(json);
-        assertThat(actual, is(equalTo(expected)));
-    }
-
-    @Test
-    public void putV1ItemsIdShouldSaveNewTree() throws Exception {
+    public void putV1ItemsWithAnIdIfATreeThatDoesentExistShouldReturnNull() throws Exception {
+        treeDao.deleteAllTrees();
         String json = new ObjectMapper().writeValueAsString(tree);
         itemsTarget = itemsTarget.queryParam("x",2);
         itemsTarget = itemsTarget.queryParam("y",2);
         Response r = itemsTarget.request().put(Entity.text(json));
         String jsonans = r.readEntity(String.class);
-        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
-        tree.setId(putAnsTree.getId());
-        tree.setTimestamp(putAnsTree.getTimestamp());
-        Tree actual = treeDao.getTree(putAnsTree.getId());
-        assertThat(actual, is(not(nullValue())));
-        assertThat(actual, is(equalTo(tree)));
-        assertThat(treeDao.getAllTrees().size(), is(1));
+        itemsTarget = itemsTarget.queryParam("dontInclude","[]");
+        itemsTarget = itemsTarget.queryParam("x",1.1);
+        itemsTarget = itemsTarget.queryParam("y",0);
+        String json2 = itemsTarget.request().get(String.class);
+
+        assertThat(json2, is(equalTo("")));
     }
-*/
+
+
+    /*
     @Test
     public void putV1ItemsWithAnIdIfATreeThatDoesentExistShouldReturnNull() throws Exception {
         String json = new ObjectMapper().writeValueAsString(tree);
@@ -212,9 +176,93 @@ public class TreeApiTest  extends CommonTest {
         assertThat(updateAnsTree, is(not(nullValue())));
         assertThat(updateAnsTree, is(equalTo(expected)));
     }
-/*
 
-@Test
+
+    */
+
+
+    //// COMENTED TESTS:
+/*
+    @Test
+    public void v1ItemsShouldReturnStatus200() {
+        assertThat(itemsTarget.request().head().getStatus(), is(200));
+    }
+
+    @Test
+    public void getV1ItemsShouldReturnTypeApplicationJson() {
+        assertThat(itemsTarget.request().get().getMediaType().toString(), is("application/json"));
+    }
+
+    @Test
+    public void getV1ItemsShouldReturnListOfTrees() throws Exception {
+        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
+        double[] y = { 0,0,0,0,0,0,0,0,0};
+        String[] m = { "3","1","2","6","4","5","7","8","9"};
+        insertTrees(9,x,y,m);
+        itemsTarget = itemsTarget.queryParam("dontInclude","[]");
+        String json = itemsTarget.request().get(String.class);
+        List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
+        assertThat(actual.size(), is(7));
+    }
+
+
+    @Test
+    public void getV1ItemsShouldReturnListOfTreesWithoutExceptionsFromTheList() throws Exception {
+        double[] x = { 1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9};
+        double[] y = { 0,0,0,0,0,0,0,0,0};
+        String[] m = { "0","1","2","3","4","5","6","7","8"};
+        List<Tree> list = insertTrees(9,x,y,m);
+
+        String exceptions = "["+list.get(1).getId()+","+list.get(3).getId()+","+list.get(5).getId()+"]";
+        itemsTarget = itemsTarget.queryParam("dontInclude",exceptions);
+        itemsTarget = itemsTarget.queryParam("x",1.1);
+        itemsTarget = itemsTarget.queryParam("y",0);
+        String json = itemsTarget.request().get(String.class);
+        List<Tree> actual = extractTreeListContentOfAGetOrPut(json);
+        String receivedOrder ="";
+        for(Tree t: actual){
+            receivedOrder+=t.getText();
+        }
+        String expectedOrder = "024678";
+
+        assertThat(receivedOrder, is(equalTo(expectedOrder)));
+
+    }
+
+    @Test
+    public void deleteV1ItemsShouldDeleteAllTrees() {
+        itemsTarget.request().delete();
+        assertThat(treeDao.getAllTrees().size(), is(0));
+    }
+
+    @Test
+    public void getV1ItemsIdShouldReturnSpecifiedTree() throws Exception {
+        Tree expected = insertTrees(1).get(0);
+        itemsTarget = itemsTarget.queryParam("x", 2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        String json = itemsTarget.path("/" + expected.getId()).request().get(String.class);
+        Tree actual = extractTreeContentOfAGetOrPut(json);
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void putV1ItemsIdShouldSaveNewTree() throws Exception {
+        String json = new ObjectMapper().writeValueAsString(tree);
+        itemsTarget = itemsTarget.queryParam("x",2);
+        itemsTarget = itemsTarget.queryParam("y",2);
+        Response r = itemsTarget.request().put(Entity.text(json));
+        String jsonans = r.readEntity(String.class);
+        Tree putAnsTree = extractTreeContentOfAGetOrPut(jsonans);
+        tree.setId(putAnsTree.getId());
+        tree.setTimestamp(putAnsTree.getTimestamp());
+        Tree actual = treeDao.getTree(putAnsTree.getId());
+        assertThat(actual, is(not(nullValue())));
+        assertThat(actual, is(equalTo(tree)));
+        assertThat(treeDao.getAllTrees().size(), is(1));
+    }
+
+
+    @Test
     public void putV1ItemsWithAnAlreadySavedTreeWithSameMetersToHideShouldReturnNull() throws Exception {
         String json = new ObjectMapper().writeValueAsString(tree);
         itemsTarget = itemsTarget.queryParam("x",2);
@@ -282,10 +330,10 @@ public class TreeApiTest  extends CommonTest {
         assertThat(list.size(), is(5));
         assertThat(extractTreeListContentOfAGetOrPut(json).size(), is(list.size()));
         String ordered = list.get(0).getText() +
-                        list.get(1).getText() +
-                        list.get(2).getText() +
-                        list.get(3).getText() +
-                        list.get(4).getText();
+                list.get(1).getText() +
+                list.get(2).getText() +
+                list.get(3).getText() +
+                list.get(4).getText();
         assertThat(ordered,is(equalTo("01234")));
     }
 
@@ -323,29 +371,5 @@ public class TreeApiTest  extends CommonTest {
         assertThat(extractEmptyTreesCountContentOfAGetOrPut(jsonAnswer), is(0));
         assertThat(extractTreeListContentOfAGetOrPut(jsonAnswer), is(nullValue()));
 
-    }
-*/
-    public Tree extractTreeContentOfAGetOrPut(String restAns) throws  Exception{
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
-        JsonNode contentNode = rootNode.get("treeContent");
-        return new ObjectMapper().readValue(contentNode, Tree.class);
-    }
-
-    public List<Tree> extractTreeListContentOfAGetOrPut(String restAns) throws  Exception{
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
-        JsonNode contentNode = rootNode.get("treeContent");
-        if(contentNode.isNull()){
-            return null;
-        }
-        return new ObjectMapper().readValue(contentNode,  objectMapper.getTypeFactory().constructCollectionType(List.class, Tree.class));
-    }
-
-    public Integer extractEmptyTreesCountContentOfAGetOrPut(String restAns) throws  Exception{
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(new StringReader(restAns));
-        JsonNode contentNode = rootNode.get("emptyTrees");
-        return new ObjectMapper().readValue(contentNode,Integer.class);
-    }
+    }*/
 }

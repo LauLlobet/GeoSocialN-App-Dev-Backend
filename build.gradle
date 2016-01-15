@@ -39,6 +39,7 @@ dependencies {
     compile('javax:javaee-web-api:7.0');
     compile('org.twitter4j:twitter4j-core:4.0.1');
     compile('com.ibm.icu:icu4j:51.1');
+    compile('com.fasterxml.jackson.core:jackson-databind:2.0.1');
     compile files("main/resources")
 
 }

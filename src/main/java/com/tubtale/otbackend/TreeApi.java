@@ -34,12 +34,13 @@ public class TreeApi {
         ObjectMapper mapper = new ObjectMapper();
         try {
             ArrayList<Integer> dontInclude = mapper.readValue(dontIncludeStrArg, mapper.getTypeFactory().constructCollectionType(List.class, Integer.class));
-            mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+            //mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
             int numberOfTrees = 7 + dontInclude.size();
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
+                    t.anonimize();
                     ansList.add(t);
                 }
             }
@@ -65,6 +66,9 @@ public class TreeApi {
                           @QueryParam("x") float x,
                           @QueryParam("y") float y) throws Exception {
         Tree tree = TreeDao.getInstance().getTree(id);
+        if(tree != null){
+            tree.anonimize();
+        }
         int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }
@@ -101,7 +105,7 @@ public class TreeApi {
             return "{ \"treeContent\":null,\"emptyTrees\":"+emptyTrees+"}";
         }
         try {
-
+            System.out.println("tree.getId() ########################"+ tree.getId());
             if( previouslySavedOne.getMetersToHide()+1 == tree.getMetersToHide() ||
                     previouslySavedOne.getMetersToHide()-1 == tree.getMetersToHide() ||
                     previouslySavedOne.getMetersToHide() == tree.getMetersToHide() ) {

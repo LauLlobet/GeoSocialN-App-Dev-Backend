@@ -139,6 +139,10 @@ public class Tree {
             return null;
         }
     }
+
+    public void anonimize() {
+        this.setIp("only by request of the authorities");
+    }
 }
 
 

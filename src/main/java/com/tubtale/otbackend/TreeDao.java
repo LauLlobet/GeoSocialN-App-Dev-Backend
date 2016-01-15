@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import java.math.BigInteger;
 import java.util.List;
 import javax.persistence.EntityManager;
-
+import org.hibernate.Query;
 
 public class TreeDao {
 
@@ -31,9 +31,10 @@ public class TreeDao {
 
     public List<Tree> getAllTrees(double longitud, double latitude, int numberOfTrees) {
         Session session = HibernateUtil.getSession();
-        List<Tree> trees = (List<Tree>)session.createSQLQuery("SELECT * FROM Tree " +
-                "ORDER BY ST_Distance(Tree.location, ST_Geomfromtext('POINT("+longitud+" "+latitude+")',4326)) " +
-                "limit "+numberOfTrees).addEntity(Tree.class).list();
+        Query query = session.createSQLQuery("SELECT * FROM Tree " +
+                "ORDER BY ST_Distance(Tree.location, ST_Geomfromtext('POINT(" + longitud + " " + latitude + ")',4326)) " +
+                "limit " + numberOfTrees).addEntity(Tree.class);
+        List<Tree> trees = query.list();
         session.flush();
         session.close();
         return trees;
@@ -53,7 +54,6 @@ public class TreeDao {
                 "WHERE " +
                 "Tree.location && " +
                 "ST_MakeEnvelope("+minLongitude+", "+minLatitude+", "+ (minLongitude+0.0001) +", "+ (minLatitude+0.0001) +", 4326) ";
-        System.out.println(query);
         Integer total = ((BigInteger) session.createSQLQuery(query).uniqueResult()).intValue();
         session.flush();
         session.close();
@@ -84,6 +84,7 @@ public class TreeDao {
             session.close();
             return tree;
         }catch (Exception e){
+            e.printStackTrace();
             return null;
         }
     }

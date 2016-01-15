@@ -98,6 +98,9 @@
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.6.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.twitter4j:twitter4j-core:4.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.ibm.icu:icu4j:51.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.0.1" level="project" />
     <orderEntry type="module-library" exported="">
       <library name="Gradle: _Users_quest_Desktop_otjavabackend_main_resources">
         <CLASSES>

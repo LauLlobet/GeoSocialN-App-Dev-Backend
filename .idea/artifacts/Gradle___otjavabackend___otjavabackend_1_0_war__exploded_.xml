@@ -61,6 +61,9 @@
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Gradle: org.twitter4j:twitter4j-core:4.0.1" />
           <element id="library" level="project" name="Gradle: com.ibm.icu:icu4j:51.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.0.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.0.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.0.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
